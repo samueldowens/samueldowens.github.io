@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://samueldowens.github.io/sitemap.xml 
