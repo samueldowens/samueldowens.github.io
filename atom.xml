@@ -4,7 +4,7 @@
   <title><![CDATA[My Flatiron School Blog]]></title>
   <link href="http://samueldowens.github.io/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-09-26T09:42:35-04:00</updated>
+  <updated>2013-09-26T09:57:57-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -28,9 +28,9 @@
 
 <p>You can set up a simple splat method as follows to see how it works:</p>
 
-<p>def splat(*inputs)
-puts inputs
-end</p>
+<p>def splat(*inputs)<br>
+puts inputs<br>
+end<br></p>
 
 <p>splat(1,2,4,5,6)</p>
 
