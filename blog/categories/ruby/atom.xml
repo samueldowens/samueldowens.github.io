@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: css | My Flatiron School Blog]]></title>
-  <link href="http://samueldowens.github.io/blog/categories/css/atom.xml" rel="self"/>
+  <title><![CDATA[Category: ruby | My Flatiron School Blog]]></title>
+  <link href="http://samueldowens.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
   <updated>2013-09-26T09:42:35-04:00</updated>
   <id>http://samueldowens.github.io/</id>
@@ -43,19 +43,6 @@ end</p>
 6<br></p>
 
 <p>This allows you to take a variable quanitity of inputs (it will also take strings) and manipulate them one at a time before deciding what to do with them. An example of when this might be useful would be if you were pulling a bunch of variable types of data from a database and wanted to sort that data, you could have the pieces get input through a splat method and have the method sort them by type (string, float, integer) into arrays before manipulating or looking at the data in the arrays with further functions.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Flatiron School Day One]]></title>
-    <link href="http://samueldowens.github.io/blog/2013/09/24/hello-world/"/>
-    <updated>2013-09-24T17:24:00-04:00</updated>
-    <id>http://samueldowens.github.io/blog/2013/09/24/hello-world</id>
-    <content type="html"><![CDATA[<p>It’s been one day and I can already tell this is going to be a period of weeks that defines my future. The first day of class 003 and the first day in the new Flatiron campus was an amazing experience. A giant space filled with like-minded nerds and geeks from all different backgrounds coming together to code for an intense amount of time.</p>
-
-<p>The best part? At the end of a long-day it hadn’t become a grind. I was laughing just as much when we wrapped up as when we started and wished the staff had let us go a little further as I was really digging into cleaning up the CSS in our project.</p>
-
-<p>I can’t wait to see what the next 12 weeks hold.</p>
 ]]></content>
   </entry>
   
