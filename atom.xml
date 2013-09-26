@@ -4,7 +4,7 @@
   <title><![CDATA[My Flatiron School Blog]]></title>
   <link href="http://samueldowens.github.io/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-09-26T08:51:26-04:00</updated>
+  <updated>2013-09-26T08:52:49-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -23,8 +23,6 @@
 <p>I am the most responsible student I have ever been, albiet through three days. I pay attention in class, work as hard as I can on my projects and do my homework thouroughly right away. Yesterday I woke up feeling like I was starting to get a cold, so I made sure to get plenty of vitamin C and went to bed at 9:30 when I was finished with my work to get a little extra sleep to help combat this cold.</p>
 
 <p>I&rsquo;m not yet sure if this is the sign of maturity, or the complete devotion to a singular focus. I&rsquo;m assuming more of the latter, I am so focused on this program that there is nothing else to be concerned about other than working hard at coding and taking care of distractions that might lead to my inability to focus or work as hard as I want to.</p>
-
-<p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-Technical Side&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
 
 <p>One thing that I did learn today was how to use a bash (*) in method arguments in Ruby. With the little Ruby I know, I really enjoy using arrays to solve problems when I can. Normally I would have the array set up ahead of time and use a method to manipulate the array or the data within to solve a given problem. Bash gives you some other options on manipulating similar sets of data however.</p>
 
