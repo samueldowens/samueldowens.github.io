@@ -4,7 +4,7 @@
   <title><![CDATA[My Flatiron School Blog]]></title>
   <link href="http://samueldowens.github.io/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-09-26T09:09:26-04:00</updated>
+  <updated>2013-09-26T09:35:59-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -14,74 +14,35 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Flatiron School Day 3]]></title>
-    <link href="http://samueldowens.github.io/blog/2013/09/26/flatiron-school-day-3/"/>
+    <title type="html"><![CDATA[Flatiron School Day Three]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/09/26/flatiron-school-day-three/"/>
     <updated>2013-09-26T08:34:00-04:00</updated>
-    <id>http://samueldowens.github.io/blog/2013/09/26/flatiron-school-day-3</id>
+    <id>http://samueldowens.github.io/blog/2013/09/26/flatiron-school-day-three</id>
     <content type="html"><![CDATA[<p>Day Three was the easiest day for me thus far with comprehension. It was mostly a review of and practice with GIT, HTML and CSS with some Ruby at towards the end of the day. I think they&rsquo;re trying to get us a lot of repetition with the basics so that when they really hit the harder stuff full force we&rsquo;ll be less-lost on the basics.</p>
 
 <p>I am the most responsible student I have ever been, albiet through three days. I pay attention in class, work as hard as I can on my projects and do my homework thouroughly right away. Yesterday I woke up feeling like I was starting to get a cold, so I made sure to get plenty of vitamin C and went to bed at 9:30 when I was finished with my work to get a little extra sleep to help combat this cold.</p>
 
 <p>I&rsquo;m not yet sure if this is the sign of maturity, or the complete devotion to a singular focus. I&rsquo;m assuming more of the latter, I am so focused on this program that there is nothing else to be concerned about other than working hard at coding and taking care of distractions that might lead to my inability to focus or work as hard as I want to.</p>
 
-<p>One thing that I did learn today was how to use a bash (*) in method arguments in Ruby. With the little Ruby I know, I really enjoy using arrays to solve problems when I can. Normally I would have the array set up ahead of time and use a method to manipulate the array or the data within to solve a given problem. Bash gives you some other options on manipulating similar sets of data however.</p>
+<p>One thing that I did learn today was how to use a splat (*) in method arguments in Ruby. With the little Ruby I know, I really enjoy using arrays to solve problems when I can. Normally I would have the array set up ahead of time and use a method to manipulate the array or the data within to solve a given problem. splat gives you some other options on manipulating similar sets of data however.</p>
 
-<p>You can set up a simple bash method as follows to see how it works:</p>
+<p>You can set up a simple splat method as follows to see how it works:</p>
 
-<br>
+<p>def splat(*inputs)
+puts inputs
+end</p>
 
+<p>splat(1,2,4,5,6)</p>
 
-<p>def bash(*inputs)</p>
+<p>This will output the following:</p>
 
-<br>
+<p>1<br>
+2<br>
+4<br>
+5<br>
+6<br></p>
 
-
-<p>puts inputs</p>
-
-<br>
-
-
-<p>end</p>
-
-<br>
-
-
-<p>bash(1,2,4,5,6)</p>
-
-<br>
-
-
-<p>This will output the following</p>
-
-<br>
-
-
-<p>1</p>
-
-<br>
-
-
-<p>2</p>
-
-<br>
-
-
-<p>4</p>
-
-<br>
-
-
-<p>5</p>
-
-<br>
-
-
-<p>6</p>
-
-<br>
-
-
-<p>This allows you to take a variable quanitity of inputs (it will also take strings) and manipulate them one at a time before deciding what to do with them. An example of when this might be useful would be if you were pulling a bunch of variable types of data from a database and wanted to sort that data, you could have the pieces get input through a bash method and have the method sort them by type (string, float, integer) into arrays before manipulating or looking at the data in the arrays with further functions.</p>
+<p>This allows you to take a variable quanitity of inputs (it will also take strings) and manipulate them one at a time before deciding what to do with them. An example of when this might be useful would be if you were pulling a bunch of variable types of data from a database and wanted to sort that data, you could have the pieces get input through a splat method and have the method sort them by type (string, float, integer) into arrays before manipulating or looking at the data in the arrays with further functions.</p>
 ]]></content>
   </entry>
   
