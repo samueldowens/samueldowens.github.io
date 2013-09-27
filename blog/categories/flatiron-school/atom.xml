@@ -4,7 +4,7 @@
   <title><![CDATA[Category: flatiron school | My Flatiron School Blog]]></title>
   <link href="http://samueldowens.github.io/blog/categories/flatiron-school/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-09-26T09:57:57-04:00</updated>
+  <updated>2013-09-27T08:31:24-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day Four]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/09/27/flatiron-school-day-four/"/>
+    <updated>2013-09-27T08:23:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/09/27/flatiron-school-day-four</id>
+    <content type="html"><![CDATA[<p>On day four we really got into Ruby. Most of the day was spent in lectures with a few labs mixed in and was punctuated by most of us being at the campus until around 11 working on our homework.</p>
+
+<p>A few takeaways that I need to make sure get ingrained in my head&hellip;</p>
+
+<p>A method always returns the return of the last command it executes. This means if you write a method to manipulate an array and want to call that method later and have it return the manipulated array that you need to call the name of the array at the end of the method in order for the method itself to return that array.</p>
+
+<p>Puts ALWAYS returns nil. So try really hard not to actually put it in a method. Definitely make sure that its not the last thing in an array unless I want the array to return nil.</p>
+
+<p>I also saw syntax I like for short if statements to keep them more compact.</p>
+
+<p>if x == 1
+   puts &ldquo;x is 1!&rdquo;
+end</p>
+
+<p>is equivalent to</p>
+
+<p>puts &ldquo;x is 1!&rdquo; if x == 1</p>
+
+<p>I think the second iteration of code looks much cleaner and would like to start thinking of short if statements that way before I put them in a block.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Day Three]]></title>
