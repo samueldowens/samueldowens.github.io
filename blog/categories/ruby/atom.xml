@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | My Flatiron School Blog]]></title>
   <link href="http://samueldowens.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-09-27T08:46:52-04:00</updated>
+  <updated>2013-09-30T08:53:37-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -12,6 +12,74 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Weekend One]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/09/30/flatiron-school-weekend-1/"/>
+    <updated>2013-09-30T08:23:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/09/30/flatiron-school-weekend-1</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m going to wrap Friday-Sunday into one big post.</p>
+
+<p>Friday began my love affair with case statements. They are beautiful creatures that really can save you a lot of code over if/else statements and also read a bit more clearly.</p>
+
+<p>EXAMPLE&hellip;
+&mdash;&mdash;The case statement looks really clear&mdash;&mdash;
+def temperature_bot(temp)
+  result = &ldquo;&rdquo;
+  case temp</p>
+
+<pre><code>when 0..16
+  result = "cold"
+when 17..21
+  result = "comfortable"
+when 22..100
+  result = "hot"
+else 
+  result = "you're probably dead"
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>&mdash;&mdash;The if statements are a lot more cluttered&hellip;.
+def temperature_bot(temp)
+  result = &ldquo;&rdquo;
+  if temp > 0 &amp;&amp; temp &lt; 17</p>
+
+<pre><code>result = "cold"
+</code></pre>
+
+<p>  elsif temp > 16 &amp;&amp; temp &lt; 22</p>
+
+<pre><code>result = "comfortable"
+</code></pre>
+
+<p>  elsif temp > 21 &amp;&amp; temp &lt; 100</p>
+
+<pre><code>result = "hot"
+</code></pre>
+
+<p>  else</p>
+
+<pre><code>result = "you're probably dead"
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>The difference doesn&rsquo;t seem to be a huge deal when you&rsquo;re scanning over the different code, but the clarity and ease of the case statement makes debugging easier when you&rsquo;re dealing with a larger set of code.</p>
+
+<p>Over the weekend I managed to stay out of Manhattan. I don&rsquo;t know in the long run if this is a good or a bad thing, but I spent the weekend in Brooklyn coding, climbing with some Flatiron folks and managed to have enough time to watch a little football on Sunday.</p>
+
+<p>I was really happy with the assessment we were given over the weekend. I think everybody at Flatiron goes through points in a day when they feel like the &lsquo;dumbest kid in class&rsquo; because they don&rsquo;t get something yet or are having trouble. Somehow, despite this happening to virtually everyone we don&rsquo;t seem to be able to shake that feeling just yet.</p>
+
+<p>Having a solo assessment that goes over the material we&rsquo;ve covered so far went a long way to helping me confirm that I knew what I was doing so far. Not everything came to me right away but I managed to make my way through everything with a little help from google and my new best friend Rubular.</p>
+
+<p>My &lsquo;take away&rsquo; from the weekend is the power of regular expressions. I think all of the code in my weekend homework that I am most proud of used regular expressions to accomplish a lot with very little code. They don&rsquo;t read as easily as normal ruby syntax but you can do some really powerful stuff with regular expressions and it makes them a lot of fun to use.</p>
+
+<p>My goal for this week is to use yield and code blocks better. I was reviewing the Treehouse ruby material to brush up for week two and they showed some very cool ways to organize a chunk of code where the main method organizes and runs the sub-methods and yields to them to do the &lsquo;work&rsquo; to get the goals they want. This reminds me of the Jukebox assignment we worked on last week and makes me think that the program would have been a lot &lsquo;cleaner&rsquo; if I was more comfortable yielding to other methods.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Day Four]]></title>
