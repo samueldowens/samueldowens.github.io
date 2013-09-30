@@ -87,50 +87,65 @@
 
 <p>Friday began my love affair with case statements. They are beautiful creatures that really can save you a lot of code over if/else statements and also read a bit more clearly.</p>
 
-<p>EXAMPLE&hellip;
-&mdash;&mdash;The case statement looks really clear&mdash;&mdash;
-def temperature_bot(temp)
-  result = &ldquo;&rdquo;
-  case temp</p>
+<p>EXAMPLES&hellip;</p>
 
-<pre><code>when 0..16
-  result = "cold"
-when 17..21
-  result = "comfortable"
-when 22..100
-  result = "hot"
-else 
-  result = "you're probably dead"
-</code></pre>
+<figure class='code'><figcaption><span>The case statement looks really clear&#8230;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">temperature_bot</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="n">temp</span>
+</span><span class='line'>    <span class="k">when</span> <span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">16</span>
+</span><span class='line'>      <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;cold&quot;</span>
+</span><span class='line'>    <span class="k">when</span> <span class="mi">17</span><span class="o">.</span><span class="n">.</span><span class="mi">21</span>
+</span><span class='line'>      <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;comfortable&quot;</span>
+</span><span class='line'>    <span class="k">when</span> <span class="mi">22</span><span class="o">.</span><span class="n">.</span><span class="mi">100</span>
+</span><span class='line'>      <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;hot&quot;</span>
+</span><span class='line'>    <span class="k">else</span>
+</span><span class='line'>      <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;you&#39;re probably dead&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>  end
-end</p>
 
-<p>&mdash;&mdash;The if statements are a lot more cluttered&hellip;.
-def temperature_bot(temp)
-  result = &ldquo;&rdquo;
-  if temp > 0 &amp;&amp; temp &lt; 17</p>
 
-<pre><code>result = "cold"
-</code></pre>
 
-<p>  elsif temp > 16 &amp;&amp; temp &lt; 22</p>
+<figure class='code'><figcaption><span>The if statements are a lot more cluttered&#8230;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">temperature_bot</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">temp</span> <span class="o">&lt;</span> <span class="mi">17</span>
+</span><span class='line'>    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;cold&quot;</span>
+</span><span class='line'>  <span class="k">elsif</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">16</span> <span class="o">&amp;&amp;</span> <span class="n">temp</span> <span class="o">&lt;</span> <span class="mi">22</span>
+</span><span class='line'>    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;comfortable&quot;</span>
+</span><span class='line'>  <span class="k">elsif</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">21</span> <span class="o">&amp;&amp;</span> <span class="n">temp</span> <span class="o">&lt;</span> <span class="mi">100</span>
+</span><span class='line'>    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;hot&quot;</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>    <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;you&#39;re probably dead&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>result = "comfortable"
-</code></pre>
-
-<p>  elsif temp > 21 &amp;&amp; temp &lt; 100</p>
-
-<pre><code>result = "hot"
-</code></pre>
-
-<p>  else</p>
-
-<pre><code>result = "you're probably dead"
-</code></pre>
-
-<p>  end
-end</p>
 
 <p>The difference doesn&rsquo;t seem to be a huge deal when you&rsquo;re scanning over the different code, but the clarity and ease of the case statement makes debugging easier when you&rsquo;re dealing with a larger set of code.</p>
 

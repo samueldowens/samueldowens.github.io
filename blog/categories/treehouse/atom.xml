@@ -4,7 +4,7 @@
   <title><![CDATA[Category: treehouse | My Flatiron School Blog]]></title>
   <link href="http://samueldowens.github.io/blog/categories/treehouse/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-09-30T08:53:37-04:00</updated>
+  <updated>2013-09-30T09:05:03-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -22,8 +22,9 @@
 
 <p>Friday began my love affair with case statements. They are beautiful creatures that really can save you a lot of code over if/else statements and also read a bit more clearly.</p>
 
-<p>EXAMPLE&hellip;
-&mdash;&mdash;The case statement looks really clear&mdash;&mdash;
+<p>EXAMPLES&hellip;</p>
+
+<p>``` ruby The case statement looks really clear&hellip;
 def temperature_bot(temp)
   result = &ldquo;&rdquo;
   case temp</p>
@@ -39,10 +40,12 @@ else
 </code></pre>
 
 <p>  end
-end</p>
+end
+```</p>
 
-<p>&mdash;&mdash;The if statements are a lot more cluttered&hellip;.
-def temperature_bot(temp)
+<p>``` ruby The if statements are a lot more cluttered&hellip;</p>
+
+<p>def temperature_bot(temp)
   result = &ldquo;&rdquo;
   if temp > 0 &amp;&amp; temp &lt; 17</p>
 
@@ -65,7 +68,8 @@ def temperature_bot(temp)
 </code></pre>
 
 <p>  end
-end</p>
+end
+```</p>
 
 <p>The difference doesn&rsquo;t seem to be a huge deal when you&rsquo;re scanning over the different code, but the clarity and ease of the case statement makes debugging easier when you&rsquo;re dealing with a larger set of code.</p>
 
