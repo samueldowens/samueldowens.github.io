@@ -181,6 +181,113 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/09/30/flatiron-school-day-8/">Flatiron School Weekend One</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-30T08:23:00-04:00" pubdate data-updated="true">Sep 30<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I came out of the weekend feeling like I really knew what I was doing, then Monday happened. At the beginning of the day I was feeling good about my competence level but once we really dug into nested hashes and how to access data inside of them the wheels really came off the rails for a while.</p>
+
+<p>The first few hash projects I was able to get through cobbling together nested do blocks based on .each and the key varient but it was really messy. I felt like I was trying to break a problem down into simpler ones like Avi told us, but coming up with even more complicated answers that usually didn&rsquo;t work.</p>
+
+<p>Then came Hashketball. A giant monstrosity of nested hashes that we had to find a bunch of ways of iterating through to get to the particular piece of data we wanted. At times we also had to compare various types of data that could be found throughout the nested hash jungle, all while trying to avoid the local predators (read: errors, fatigue, frustration). After what seemed like a day and a half but was really probably only a couple hours of fruitlessly banging on my keyboard trying to break the problem down into smaller problems, or try and get elaborate nested blocks to do what I wanted I finally found the heartbreakingly simple answer of how to access the hash how I wanted.</p>
+
+<p>It was so simple I couldn&rsquo;t believe it. Or at least I couldn&rsquo;t believe it until the thought occured to me that rubyists likely have to do this sort of thing and since its ruby there has to be an easy way to do it, that&rsquo;s just the way ruby works.</p>
+
+<figure class='code'><figcaption><span>It looks so simple when you see it&#8230;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">hash</span> <span class="o">=</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="ss">:hash1</span> <span class="o">=&gt;</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="ss">:hash2</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+</span><span class='line'>    <span class="ss">:hash3</span> <span class="o">=&gt;</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>      <span class="ss">:hash4</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
+</span><span class='line'>      <span class="ss">:hash5</span> <span class="o">=&gt;</span> <span class="mi">3</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="p">},</span>
+</span><span class='line'>  <span class="ss">:hash6</span> <span class="o">=&gt;</span> <span class="mi">4</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">#so to access the number 3.</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">hash</span><span class="o">[</span><span class="ss">:hash1</span><span class="o">][</span><span class="ss">:hash3</span><span class="o">][</span><span class="ss">:hash5</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">#this looks at the &#39;hash&#39; created, then accesses deeper levels of the hash by </span>
+</span><span class='line'><span class="c1">#calling on keys in [].</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="c1">#you can also iterate through pieces of a hash.</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">hash</span><span class="o">[</span><span class="ss">:hash1</span><span class="o">][</span><span class="ss">:hash3</span><span class="o">].</span><span class="n">each_key</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="o">|</span>
+</span><span class='line'>  <span class="nb">hash</span><span class="o">[</span><span class="ss">:hash1</span><span class="o">][</span><span class="ss">:hash3</span><span class="o">][</span><span class="n">key</span><span class="o">]</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">#This looks through the has to the key :hash3 then looks at each key within and </span>
+</span><span class='line'><span class="c1">#returns the value it&#39;s associated with.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/09/27/flatiron-school-day-four/">Flatiron School Day Four</a></h1>
     
     
@@ -387,6 +494,10 @@ end<br></p>
       </li>
     
       <li class="post">
+        <a href="/blog/2013/09/30/flatiron-school-day-8/">Flatiron School Weekend One</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/27/flatiron-school-day-four/">Flatiron School Day Four</a>
       </li>
     
@@ -396,10 +507,6 @@ end<br></p>
     
       <li class="post">
         <a href="/blog/2013/09/25/day-two/">Flatiron School Day Two</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/24/hello-world/">Flatiron School Day One</a>
       </li>
     
   </ul>
