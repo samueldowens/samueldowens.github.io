@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | My Flatiron School Blog]]></title>
   <link href="http://samueldowens.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-01T08:55:55-04:00</updated>
+  <updated>2013-10-01T08:56:20-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day 8]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/01/flatiron-school-day-8/"/>
+    <updated>2013-10-01T08:23:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/01/flatiron-school-day-8</id>
+    <content type="html"><![CDATA[<p>I came out of the weekend feeling like I really knew what I was doing, then Monday happened. At the beginning of the day I was feeling good about my competence level but once we really dug into nested hashes and how to access data inside of them the wheels really came off the rails for a while.</p>
+
+<p>The first few hash projects I was able to get through cobbling together nested do blocks based on .each and the key varient but it was really messy. I felt like I was trying to break a problem down into simpler ones like Avi told us, but coming up with even more complicated answers that usually didn&rsquo;t work.</p>
+
+<p>Then came Hashketball. A giant monstrosity of nested hashes that we had to find a bunch of ways of iterating through to get to the particular piece of data we wanted. At times we also had to compare various types of data that could be found throughout the nested hash jungle, all while trying to avoid the local predators (read: errors, fatigue, frustration). After what seemed like a day and a half but was really probably only a couple hours of fruitlessly banging on my keyboard trying to break the problem down into smaller problems, or try and get elaborate nested blocks to do what I wanted I finally found the heartbreakingly simple answer of how to access the hash how I wanted.</p>
+
+<p>It was so simple I couldn&rsquo;t believe it. Or at least I couldn&rsquo;t believe it until the thought occured to me that rubyists likely have to do this sort of thing and since its ruby there has to be an easy way to do it, that&rsquo;s just the way ruby works.</p>
+
+<p>``` ruby It looks so simple when you see it&hellip;
+hash =
+{
+  :hash1 =>
+  {</p>
+
+<pre><code>:hash2 =&gt; 1,
+:hash3 =&gt; 
+{
+  :hash4 =&gt; 2,
+  :hash5 =&gt; 3
+},
+</code></pre>
+
+<p>  },
+  :hash6 => 4
+}</p>
+
+<h1>so to access the number 3.</h1>
+
+<p>hash[:hash1][:hash3][:hash5]</p>
+
+<h1>this looks at the &lsquo;hash&rsquo; created, then accesses deeper levels of the hash by</h1>
+
+<h1>calling on keys in [].</h1>
+
+<h1>you can also iterate through pieces of a hash.</h1>
+
+<p>hash[:hash1][:hash3].each_key do |key|
+  hash[:hash1][:hash3][key]
+end</p>
+
+<h1>This looks through the has to the key :hash3 then looks at each key within and</h1>
+
+<h1>returns the value it&rsquo;s associated with.</h1>
+
+<p>```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Weekend One]]></title>
@@ -82,59 +135,6 @@ end
 <p>My &lsquo;take away&rsquo; from the weekend is the power of regular expressions. I think all of the code in my weekend homework that I am most proud of used regular expressions to accomplish a lot with very little code. They don&rsquo;t read as easily as normal ruby syntax but you can do some really powerful stuff with regular expressions and it makes them a lot of fun to use.</p>
 
 <p>My goal for this week is to use yield and code blocks better. I was reviewing the Treehouse ruby material to brush up for week two and they showed some very cool ways to organize a chunk of code where the main method organizes and runs the sub-methods and yields to them to do the &lsquo;work&rsquo; to get the goals they want. This reminds me of the Jukebox assignment we worked on last week and makes me think that the program would have been a lot &lsquo;cleaner&rsquo; if I was more comfortable yielding to other methods.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Flatiron School Day 8]]></title>
-    <link href="http://samueldowens.github.io/blog/2013/09/30/flatiron-school-day-8/"/>
-    <updated>2013-09-30T08:23:00-04:00</updated>
-    <id>http://samueldowens.github.io/blog/2013/09/30/flatiron-school-day-8</id>
-    <content type="html"><![CDATA[<p>I came out of the weekend feeling like I really knew what I was doing, then Monday happened. At the beginning of the day I was feeling good about my competence level but once we really dug into nested hashes and how to access data inside of them the wheels really came off the rails for a while.</p>
-
-<p>The first few hash projects I was able to get through cobbling together nested do blocks based on .each and the key varient but it was really messy. I felt like I was trying to break a problem down into simpler ones like Avi told us, but coming up with even more complicated answers that usually didn&rsquo;t work.</p>
-
-<p>Then came Hashketball. A giant monstrosity of nested hashes that we had to find a bunch of ways of iterating through to get to the particular piece of data we wanted. At times we also had to compare various types of data that could be found throughout the nested hash jungle, all while trying to avoid the local predators (read: errors, fatigue, frustration). After what seemed like a day and a half but was really probably only a couple hours of fruitlessly banging on my keyboard trying to break the problem down into smaller problems, or try and get elaborate nested blocks to do what I wanted I finally found the heartbreakingly simple answer of how to access the hash how I wanted.</p>
-
-<p>It was so simple I couldn&rsquo;t believe it. Or at least I couldn&rsquo;t believe it until the thought occured to me that rubyists likely have to do this sort of thing and since its ruby there has to be an easy way to do it, that&rsquo;s just the way ruby works.</p>
-
-<p>``` ruby It looks so simple when you see it&hellip;
-hash =
-{
-  :hash1 =>
-  {</p>
-
-<pre><code>:hash2 =&gt; 1,
-:hash3 =&gt; 
-{
-  :hash4 =&gt; 2,
-  :hash5 =&gt; 3
-},
-</code></pre>
-
-<p>  },
-  :hash6 => 4
-}</p>
-
-<h1>so to access the number 3.</h1>
-
-<p>hash[:hash1][:hash3][:hash5]</p>
-
-<h1>this looks at the &lsquo;hash&rsquo; created, then accesses deeper levels of the hash by</h1>
-
-<h1>calling on keys in [].</h1>
-
-<h1>you can also iterate through pieces of a hash.</h1>
-
-<p>hash[:hash1][:hash3].each_key do |key|
-  hash[:hash1][:hash3][key]
-end</p>
-
-<h1>This looks through the has to the key :hash3 then looks at each key within and</h1>
-
-<h1>returns the value it&rsquo;s associated with.</h1>
-
-<p>```</p>
 ]]></content>
   </entry>
   

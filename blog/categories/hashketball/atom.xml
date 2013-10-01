@@ -4,7 +4,7 @@
   <title><![CDATA[Category: hashketball | My Flatiron School Blog]]></title>
   <link href="http://samueldowens.github.io/blog/categories/hashketball/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-01T08:55:55-04:00</updated>
+  <updated>2013-10-01T08:56:20-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Day 8]]></title>
-    <link href="http://samueldowens.github.io/blog/2013/09/30/flatiron-school-day-8/"/>
-    <updated>2013-09-30T08:23:00-04:00</updated>
-    <id>http://samueldowens.github.io/blog/2013/09/30/flatiron-school-day-8</id>
+    <link href="http://samueldowens.github.io/blog/2013/10/01/flatiron-school-day-8/"/>
+    <updated>2013-10-01T08:23:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/01/flatiron-school-day-8</id>
     <content type="html"><![CDATA[<p>I came out of the weekend feeling like I really knew what I was doing, then Monday happened. At the beginning of the day I was feeling good about my competence level but once we really dug into nested hashes and how to access data inside of them the wheels really came off the rails for a while.</p>
 
 <p>The first few hash projects I was able to get through cobbling together nested do blocks based on .each and the key varient but it was really messy. I felt like I was trying to break a problem down into simpler ones like Avi told us, but coming up with even more complicated answers that usually didn&rsquo;t work.</p>
