@@ -4,7 +4,7 @@
   <title><![CDATA[My Flatiron School Blog]]></title>
   <link href="http://samueldowens.github.io/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-01T08:56:20-04:00</updated>
+  <updated>2013-10-02T08:46:23-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day 9]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/02/flatiron-school-day-nine/"/>
+    <updated>2013-10-02T08:23:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/02/flatiron-school-day-nine</id>
+    <content type="html"><![CDATA[<p>Week two day two was a rough one for me. I&rsquo;m finally starting to feel really stressed by the material. I&rsquo;m spending a lot more time fighting my way through producing what I feel is sub-par code than I&rsquo;d like. I&rsquo;m really hoping that I&rsquo;m reaching the end of a plateau in my learning and will take a jump forward soon. I&rsquo;m having trouble breaking problems down into smaller pieces and still keeping track of everything. I&rsquo;m also having some issues figuring out how to refactor my code from the &lsquo;works&rsquo; stage to the &lsquo;right&rsquo; stage. Week 2 day 3 we get a big chunk of time to catch up on stuff though, so I&rsquo;m hoping that my not feeling confident about my code from the last day or two isn&rsquo;t uncommon and that I come out of Wednesday feeling a bit better.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Day 8]]></title>
