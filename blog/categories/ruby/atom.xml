@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | My Flatiron School Blog]]></title>
   <link href="http://samueldowens.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-03T09:10:01-04:00</updated>
+  <updated>2013-10-03T09:14:51-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day Ten]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/02/flatiron-school-day-ten/"/>
+    <updated>2013-10-02T08:23:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/02/flatiron-school-day-ten</id>
+    <content type="html"><![CDATA[<p>Phew, day nine is over and in the rear view mirror and day ten kicked off
+with a few hours of self-directed work. It really seemed to come at just
+the right time for a lot of us, myself included. I got caught up on a lot
+of the things that were giving me trouble and by the end of the day was
+really feeling like I was back in the driver&rsquo;s seat with my learning.</p>
+
+<p>I&rsquo;m finally starting to instinctively break things down into smaller chunks.
+I was expecting this sort of progress to come with a light bulb over my head,
+fireworks or some other sort of stark realization that I had made progress.
+Instead it came from solving a problem and looking at my solution and realizing
+that I solved it differently than I would have a couple days ago without even
+noticing I was doing it.</p>
+
+<p>I&rsquo;m also starting to get a little bit of a handle on refactoring. I managed
+to get our pigeon hash problem working and then condensed some of my code
+that was running in different parts of the program into a single method at
+the end to execute all the sub-methods at once. I&rsquo;m happy that I spotted this
+and was able to make my code better without breaking its functionality. After
+looking at some of the solutions my classmates came up with however, I still
+know that I have a lot of work to do with refactoring as some of their
+solutions were brilliant!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Day Nine]]></title>
@@ -171,39 +200,6 @@ end</p>
 <p>puts &ldquo;x is 1!&rdquo; if x == 1</p>
 
 <p>I think the second iteration of code looks much cleaner and would like to start thinking of short if statements that way before I put them in a block.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Flatiron School Day Three]]></title>
-    <link href="http://samueldowens.github.io/blog/2013/09/26/flatiron-school-day-three/"/>
-    <updated>2013-09-26T08:34:00-04:00</updated>
-    <id>http://samueldowens.github.io/blog/2013/09/26/flatiron-school-day-three</id>
-    <content type="html"><![CDATA[<p>Day Three was the easiest day for me thus far with comprehension. It was mostly a review of and practice with GIT, HTML and CSS with some Ruby at towards the end of the day. I think they&rsquo;re trying to get us a lot of repetition with the basics so that when they really hit the harder stuff full force we&rsquo;ll be less-lost on the basics.</p>
-
-<p>I am the most responsible student I have ever been, albiet through three days. I pay attention in class, work as hard as I can on my projects and do my homework thouroughly right away. Yesterday I woke up feeling like I was starting to get a cold, so I made sure to get plenty of vitamin C and went to bed at 9:30 when I was finished with my work to get a little extra sleep to help combat this cold.</p>
-
-<p>I&rsquo;m not yet sure if this is the sign of maturity, or the complete devotion to a singular focus. I&rsquo;m assuming more of the latter, I am so focused on this program that there is nothing else to be concerned about other than working hard at coding and taking care of distractions that might lead to my inability to focus or work as hard as I want to.</p>
-
-<p>One thing that I did learn today was how to use a splat (*) in method arguments in Ruby. With the little Ruby I know, I really enjoy using arrays to solve problems when I can. Normally I would have the array set up ahead of time and use a method to manipulate the array or the data within to solve a given problem. splat gives you some other options on manipulating similar sets of data however.</p>
-
-<p>You can set up a simple splat method as follows to see how it works:</p>
-
-<p>def splat(*inputs)<br>
-puts inputs<br>
-end<br></p>
-
-<p>splat(1,2,4,5,6)</p>
-
-<p>This will output the following:</p>
-
-<p>1<br>
-2<br>
-4<br>
-5<br>
-6<br></p>
-
-<p>This allows you to take a variable quanitity of inputs (it will also take strings) and manipulate them one at a time before deciding what to do with them. An example of when this might be useful would be if you were pulling a bunch of variable types of data from a database and wanted to sort that data, you could have the pieces get input through a splat method and have the method sort them by type (string, float, integer) into arrays before manipulating or looking at the data in the arrays with further functions.</p>
 ]]></content>
   </entry>
   
