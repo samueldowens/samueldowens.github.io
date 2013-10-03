@@ -4,7 +4,7 @@
   <title><![CDATA[Category: flatiron school | My Flatiron School Blog]]></title>
   <link href="http://samueldowens.github.io/blog/categories/flatiron-school/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-02T08:46:23-04:00</updated>
+  <updated>2013-10-03T08:57:31-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -14,16 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Flatiron School Day 9]]></title>
-    <link href="http://samueldowens.github.io/blog/2013/10/02/flatiron-school-day-nine/"/>
-    <updated>2013-10-02T08:23:00-04:00</updated>
-    <id>http://samueldowens.github.io/blog/2013/10/02/flatiron-school-day-nine</id>
-    <content type="html"><![CDATA[<p>Week two day two was a rough one for me. I&rsquo;m finally starting to feel really stressed by the material. I&rsquo;m spending a lot more time fighting my way through producing what I feel is sub-par code than I&rsquo;d like. I&rsquo;m really hoping that I&rsquo;m reaching the end of a plateau in my learning and will take a jump forward soon. I&rsquo;m having trouble breaking problems down into smaller pieces and still keeping track of everything. I&rsquo;m also having some issues figuring out how to refactor my code from the &lsquo;works&rsquo; stage to the &lsquo;right&rsquo; stage. Week 2 day 3 we get a big chunk of time to catch up on stuff though, so I&rsquo;m hoping that my not feeling confident about my code from the last day or two isn&rsquo;t uncommon and that I come out of Wednesday feeling a bit better.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Flatiron School Day 8]]></title>
+    <title type="html"><![CDATA[Flatiron School Day Eight]]></title>
     <link href="http://samueldowens.github.io/blog/2013/10/01/flatiron-school-day-8/"/>
     <updated>2013-10-01T08:23:00-04:00</updated>
     <id>http://samueldowens.github.io/blog/2013/10/01/flatiron-school-day-8</id>
@@ -204,6 +195,19 @@ end<br></p>
 6<br></p>
 
 <p>This allows you to take a variable quanitity of inputs (it will also take strings) and manipulate them one at a time before deciding what to do with them. An example of when this might be useful would be if you were pulling a bunch of variable types of data from a database and wanted to sort that data, you could have the pieces get input through a splat method and have the method sort them by type (string, float, integer) into arrays before manipulating or looking at the data in the arrays with further functions.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day Two]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/09/25/day-two/"/>
+    <updated>2013-09-25T08:36:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/09/25/day-two</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m catching up by posting my day two post on the morning of Day 3. Yesterday we spent a ton of time on Git and Github, as well as setting up our environment and getting plenty of practice with BASH. Most of this came fairly easily, though with Git it took me a while to even start to understand the differences between merging and rebasing.</p>
+
+<p>My understanding is that when you create a new branch to work on a feature, other things can happen to the master branch while that feature is still being worked on (like other features or fixes being merged in). If you were to merge a feature in after many changes have happened to the master branch you can run into some conflicts when you try and merge the new branch in. These situations can sometimes be mitigated by rebasing the branch instead, removing it from the branch continuity and placing it back on top of the master branch. My understanding of exactly how this works is still a little incomplete, but I believe it does something like catch the base code up to current for the branch and then add the new feature changes rather than attempting to merge two complete sets.</p>
+
+<p>I&rsquo;ve also decided that I want to do some (completely unqualified) self expirimentation and research into some of the non-computer related aspects of coding. Yesterday after about hour 9 or 10 of coding I started to hit a wall where it was &lsquo;hard&rsquo; to think and I was having to look up simple commands that I know off the top of my head normally. I was also becoming more frustrated more quickly when I ran into issues. I think of this as &lsquo;brain fatigue&rsquo; and would like to see how different factors like sleep, diet and exercise affect this over my time at Flatiron. Hopefully I&rsquo;ll find some ways to combat this issue that I imagine is being run into by more folks than myself.</p>
 ]]></content>
   </entry>
   
