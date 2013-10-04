@@ -4,7 +4,7 @@
   <title><![CDATA[Category: flatiron school | My Flatiron School Blog]]></title>
   <link href="http://samueldowens.github.io/blog/categories/flatiron-school/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-03T11:30:44-04:00</updated>
+  <updated>2013-10-04T08:49:43-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day Eleven]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/04/flatiron-school-day-eleven/"/>
+    <updated>2013-10-04T08:23:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/04/flatiron-school-day-eleven</id>
+    <content type="html"><![CDATA[<p>Day Eleven kicked off a day of very little actual Ruby. In the morning we worked on a debugging project where we were handed some broken ruby code and the expectations for how it was supposed to work and had to fix it. I really enjoyed that project, as much as I like building new things its also fun to fix broken stuff. After that though, the rest of the day was spent on SQL.</p>
+
+<p>Something I like about Flatiron is that we learn everything from the ground up. The magic of a lot of things like Rails and Active Record will be understood by us as we will have learned to do everything without them. That is exactly how I want to learn to program. That said, it&rsquo;s also a pain in the butt. Writing SQL queries isn&rsquo;t conceptually difficult, though the new syntax creates some conflicts, but writing it in sublime as a .sql file and smashing it into a DB in BASH is a more tedious process than I think is probably necessary. I&rsquo;m about ready for Active Record!</p>
+
+<p>Most of the classes issues seemed to stem from Queries and Joins. Most of the organizing of the databases came pretty naturally to most people I talked to, but there is a lot of syntax with queries/joins that can be pretty confusing. I&rsquo;m going to post a snippit of my code and try and explain it&hellip;</p>
+
+<p>``` sql Queries and Joins</p>
+
+<p>SELECT project.title, SUM(pledge.amount) AS &lsquo;total_pledge_amount&rsquo;
+FROM
+project
+INNER JOIN
+pledge
+ON
+project.id = pledge.project_id
+GROUP BY
+project.title;</p>
+
+<p>```</p>
+
+<p>So, this query has several parts which I will try and explain correctly one at a time.</p>
+
+<p>The first is SELECT. This is the specific data we want this query to look at. In this case its the &lsquo;title&rsquo; column from the &lsquo;project&rsquo; table and the sum of the &lsquo;amount&rsquo; column from the &lsquo;pledge&rsquo; table. The AS key just renames the result of the SUM function to &lsquo;total_pledge_amount&rsquo; and could be removed and the query would still function. Next is FROM, we are joining from the project table, using an INNER JOIN with the pledge table. I reversed the places of project and pledge and got the same results, so I&rsquo;m not yet sure where it would be important to specify one table in front of another. After that is ON, which is where the JOIN will link the two tables based on a mutual key. In this case its the primary key of project (project.id) and the foreign key in pledge that corresponds with the project primary key (pledge.project_id). Lastly is GROUP BY for which i put &lsquo;project.title&rsquo; this orders the query results alphabetically by the &lsquo;title&rsquo; column in the &lsquo;project&rsquo; table. The result is a list of each project.title and the total amount of pledges that match each projects key.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Day Ten]]></title>
@@ -173,33 +204,6 @@ end
 <p>My &lsquo;take away&rsquo; from the weekend is the power of regular expressions. I think all of the code in my weekend homework that I am most proud of used regular expressions to accomplish a lot with very little code. They don&rsquo;t read as easily as normal ruby syntax but you can do some really powerful stuff with regular expressions and it makes them a lot of fun to use.</p>
 
 <p>My goal for this week is to use yield and code blocks better. I was reviewing the Treehouse ruby material to brush up for week two and they showed some very cool ways to organize a chunk of code where the main method organizes and runs the sub-methods and yields to them to do the &lsquo;work&rsquo; to get the goals they want. This reminds me of the Jukebox assignment we worked on last week and makes me think that the program would have been a lot &lsquo;cleaner&rsquo; if I was more comfortable yielding to other methods.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Flatiron School Day Four]]></title>
-    <link href="http://samueldowens.github.io/blog/2013/09/27/flatiron-school-day-four/"/>
-    <updated>2013-09-27T08:23:00-04:00</updated>
-    <id>http://samueldowens.github.io/blog/2013/09/27/flatiron-school-day-four</id>
-    <content type="html"><![CDATA[<p>On day four we really got into Ruby. Most of the day was spent in lectures with a few labs mixed in and was punctuated by most of us being at the campus pretty late working on our homework.</p>
-
-<p>A few takeaways that I need to make sure get ingrained in my head&hellip;</p>
-
-<p>A method always returns the return of the last command it executes. This means if you write a method to manipulate an array and want to call that method later and have it return the manipulated array that you need to call the name of the array at the end of the method in order for the method itself to return that array.</p>
-
-<p>Puts ALWAYS returns nil. So try really hard not to actually put it in a method. Definitely make sure that its not the last thing in an array unless I want the array to return nil.</p>
-
-<p>I also saw syntax I like for short if statements to keep them more compact.</p>
-
-<p>if x == 1
-   puts &ldquo;x is 1!&rdquo;
-end</p>
-
-<p>is equivalent to</p>
-
-<p>puts &ldquo;x is 1!&rdquo; if x == 1</p>
-
-<p>I think the second iteration of code looks much cleaner and would like to start thinking of short if statements that way before I put them in a block.</p>
 ]]></content>
   </entry>
   

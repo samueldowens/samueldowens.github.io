@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Flatiron School Day Two - My Flatiron School Blog</title>
+  <title>Flatiron School Day Eleven - My Flatiron School Blog</title>
   <meta name="author" content="Samuel Owens">
 
   
-  <meta name="description" content="Flatiron School Day Two Sep 25th, 2013 var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-44580555-1']); _gaq.push(['_trackPageview']); (function &hellip;">
+  <meta name="description" content="Flatiron School Day Eleven Oct 4th, 2013 var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-44580555-1']); _gaq.push(['_trackPageview']); ( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://samueldowens.github.io/blog/2013/09/25/day-two">
+  <link rel="canonical" href="http://samueldowens.github.io/blog/2013/10/04/flatiron-school-day-eleven">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="http://feeds.feedburner.com/ MyFlatironSchoolBlog" rel="alternate" title="My Flatiron School Blog" type="application/atom+xml">
@@ -79,7 +79,7 @@
 <article role="article">
   
   <header>
-    <h1 class="entry-title">Flatiron School Day Two</h1>
+    <h1 class="entry-title">Flatiron School Day Eleven</h1>
     <p class="meta">
 
 
@@ -92,7 +92,7 @@
   
 
 
-<time datetime="2013-09-25T08:36:00-04:00" pubdate data-updated="true">Sep 25<span>th</span>, 2013</time></p>
+<time datetime="2013-10-04T08:23:00-04:00" pubdate data-updated="true">Oct 4<span>th</span>, 2013</time></p>
 
     <script type="text/javascript">
 
@@ -109,11 +109,36 @@
 </script>
   </header>
   
-  <p>I&rsquo;m catching up by posting my day two post on the morning of Day 3. Yesterday we spent a ton of time on Git and Github, as well as setting up our environment and getting plenty of practice with BASH. Most of this came fairly easily, though with Git it took me a while to even start to understand the differences between merging and rebasing.</p>
+  <p>Day Eleven kicked off a day of very little actual Ruby. In the morning we worked on a debugging project where we were handed some broken ruby code and the expectations for how it was supposed to work and had to fix it. I really enjoyed that project, as much as I like building new things its also fun to fix broken stuff. After that though, the rest of the day was spent on SQL.</p>
 
-<p>My understanding is that when you create a new branch to work on a feature, other things can happen to the master branch while that feature is still being worked on (like other features or fixes being merged in). If you were to merge a feature in after many changes have happened to the master branch you can run into some conflicts when you try and merge the new branch in. These situations can sometimes be mitigated by rebasing the branch instead, removing it from the branch continuity and placing it back on top of the master branch. My understanding of exactly how this works is still a little incomplete, but I believe it does something like catch the base code up to current for the branch and then add the new feature changes rather than attempting to merge two complete sets.</p>
+<p>Something I like about Flatiron is that we learn everything from the ground up. The magic of a lot of things like Rails and Active Record will be understood by us as we will have learned to do everything without them. That is exactly how I want to learn to program. That said, it&rsquo;s also a pain in the butt. Writing SQL queries isn&rsquo;t conceptually difficult, though the new syntax creates some conflicts, but writing it in sublime as a .sql file and smashing it into a DB in BASH is a more tedious process than I think is probably necessary. I&rsquo;m about ready for Active Record!</p>
 
-<p>I&rsquo;ve also decided that I want to do some (completely unqualified) self expirimentation and research into some of the non-computer related aspects of coding. Yesterday after about hour 9 or 10 of coding I started to hit a wall where it was &lsquo;hard&rsquo; to think and I was having to look up simple commands that I know off the top of my head normally. I was also becoming more frustrated more quickly when I ran into issues. I think of this as &lsquo;brain fatigue&rsquo; and would like to see how different factors like sleep, diet and exercise affect this over my time at Flatiron. Hopefully I&rsquo;ll find some ways to combat this issue that I imagine is being run into by more folks than myself.</p>
+<p>Most of the classes issues seemed to stem from Queries and Joins. Most of the organizing of the databases came pretty naturally to most people I talked to, but there is a lot of syntax with queries/joins that can be pretty confusing. I&rsquo;m going to post a snippit of my code and try and explain it&hellip;</p>
+
+<figure class='code'><figcaption><span>Queries and Joins</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">SELECT</span> <span class="n">project</span><span class="p">.</span><span class="n">title</span><span class="p">,</span> <span class="k">SUM</span><span class="p">(</span><span class="n">pledge</span><span class="p">.</span><span class="n">amount</span><span class="p">)</span> <span class="k">AS</span> <span class="s1">&#39;total_pledge_amount&#39;</span>
+</span><span class='line'><span class="k">FROM</span>
+</span><span class='line'><span class="n">project</span>
+</span><span class='line'><span class="k">INNER</span> <span class="k">JOIN</span>
+</span><span class='line'><span class="n">pledge</span>
+</span><span class='line'><span class="k">ON</span>
+</span><span class='line'><span class="n">project</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">pledge</span><span class="p">.</span><span class="n">project_id</span>
+</span><span class='line'><span class="k">GROUP</span> <span class="k">BY</span>
+</span><span class='line'><span class="n">project</span><span class="p">.</span><span class="n">title</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So, this query has several parts which I will try and explain correctly one at a time.</p>
+
+<p>The first is SELECT. This is the specific data we want this query to look at. In this case its the &lsquo;title&rsquo; column from the &lsquo;project&rsquo; table and the sum of the &lsquo;amount&rsquo; column from the &lsquo;pledge&rsquo; table. The AS key just renames the result of the SUM function to &lsquo;total_pledge_amount&rsquo; and could be removed and the query would still function. Next is FROM, we are joining from the project table, using an INNER JOIN with the pledge table. I reversed the places of project and pledge and got the same results, so I&rsquo;m not yet sure where it would be important to specify one table in front of another. After that is ON, which is where the JOIN will link the two tables based on a mutual key. In this case its the primary key of project (project.id) and the foreign key in pledge that corresponds with the project primary key (pledge.project_id). Lastly is GROUP BY for which i put &lsquo;project.title&rsquo; this orders the query results alphabetically by the &lsquo;title&rsquo; column in the &lsquo;project&rsquo; table. The result is a list of each project.title and the total amount of pledges that match each projects key.</p>
 
   
     <footer>
@@ -131,12 +156,12 @@
   
 
 
-<time datetime="2013-09-25T08:36:00-04:00" pubdate data-updated="true">Sep 25<span>th</span>, 2013</time>
+<time datetime="2013-10-04T08:23:00-04:00" pubdate data-updated="true">Oct 4<span>th</span>, 2013</time>
         
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/bash/'>BASH</a>, <a class='category' href='/blog/categories/branching/'>branching</a>, <a class='category' href='/blog/categories/flatiron-school/'>flatiron school</a>, <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/merging/'>merging</a>, <a class='category' href='/blog/categories/rebasing/'>rebasing</a>
+    <a class='category' href='/blog/categories/flatiron-school/'>flatiron school</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>
   
 </span>
 
@@ -145,7 +170,7 @@
       
         <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://samueldowens.github.io/blog/2013/09/25/day-two/" data-via="samueldowens" data-counturl="http://samueldowens.github.io/blog/2013/09/25/day-two/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://samueldowens.github.io/blog/2013/10/04/flatiron-school-day-eleven/" data-via="samueldowens" data-counturl="http://samueldowens.github.io/blog/2013/10/04/flatiron-school-day-eleven/" >Tweet</a>
   
   
   
@@ -227,8 +252,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://samueldowens.github.io/blog/2013/09/25/day-two/';
-        var disqus_url = 'http://samueldowens.github.io/blog/2013/09/25/day-two/';
+        var disqus_identifier = 'http://samueldowens.github.io/blog/2013/10/04/flatiron-school-day-eleven/';
+        var disqus_url = 'http://samueldowens.github.io/blog/2013/10/04/flatiron-school-day-eleven/';
         var disqus_script = 'embed.js';
       
     (function () {

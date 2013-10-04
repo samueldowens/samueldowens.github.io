@@ -4,7 +4,7 @@
   <title><![CDATA[My Flatiron School Blog]]></title>
   <link href="http://samueldowens.github.io/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-03T11:30:44-04:00</updated>
+  <updated>2013-10-04T08:49:43-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -12,6 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day Eleven]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/04/flatiron-school-day-eleven/"/>
+    <updated>2013-10-04T08:23:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/04/flatiron-school-day-eleven</id>
+    <content type="html"><![CDATA[<p>Day Eleven kicked off a day of very little actual Ruby. In the morning we worked on a debugging project where we were handed some broken ruby code and the expectations for how it was supposed to work and had to fix it. I really enjoyed that project, as much as I like building new things its also fun to fix broken stuff. After that though, the rest of the day was spent on SQL.</p>
+
+<p>Something I like about Flatiron is that we learn everything from the ground up. The magic of a lot of things like Rails and Active Record will be understood by us as we will have learned to do everything without them. That is exactly how I want to learn to program. That said, it&rsquo;s also a pain in the butt. Writing SQL queries isn&rsquo;t conceptually difficult, though the new syntax creates some conflicts, but writing it in sublime as a .sql file and smashing it into a DB in BASH is a more tedious process than I think is probably necessary. I&rsquo;m about ready for Active Record!</p>
+
+<p>Most of the classes issues seemed to stem from Queries and Joins. Most of the organizing of the databases came pretty naturally to most people I talked to, but there is a lot of syntax with queries/joins that can be pretty confusing. I&rsquo;m going to post a snippit of my code and try and explain it&hellip;</p>
+
+<figure class='code'><figcaption><span>Queries and Joins</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">SELECT</span> <span class="n">project</span><span class="p">.</span><span class="n">title</span><span class="p">,</span> <span class="k">SUM</span><span class="p">(</span><span class="n">pledge</span><span class="p">.</span><span class="n">amount</span><span class="p">)</span> <span class="k">AS</span> <span class="s1">&#39;total_pledge_amount&#39;</span>
+</span><span class='line'><span class="k">FROM</span>
+</span><span class='line'><span class="n">project</span>
+</span><span class='line'><span class="k">INNER</span> <span class="k">JOIN</span>
+</span><span class='line'><span class="n">pledge</span>
+</span><span class='line'><span class="k">ON</span>
+</span><span class='line'><span class="n">project</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">pledge</span><span class="p">.</span><span class="n">project_id</span>
+</span><span class='line'><span class="k">GROUP</span> <span class="k">BY</span>
+</span><span class='line'><span class="n">project</span><span class="p">.</span><span class="n">title</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So, this query has several parts which I will try and explain correctly one at a time.</p>
+
+<p>The first is SELECT. This is the specific data we want this query to look at. In this case its the &lsquo;title&rsquo; column from the &lsquo;project&rsquo; table and the sum of the &lsquo;amount&rsquo; column from the &lsquo;pledge&rsquo; table. The AS key just renames the result of the SUM function to &lsquo;total_pledge_amount&rsquo; and could be removed and the query would still function. Next is FROM, we are joining from the project table, using an INNER JOIN with the pledge table. I reversed the places of project and pledge and got the same results, so I&rsquo;m not yet sure where it would be important to specify one table in front of another. After that is ON, which is where the JOIN will link the two tables based on a mutual key. In this case its the primary key of project (project.id) and the foreign key in pledge that corresponds with the project primary key (pledge.project_id). Lastly is GROUP BY for which i put &lsquo;project.title&rsquo; this orders the query results alphabetically by the &lsquo;title&rsquo; column in the &lsquo;project&rsquo; table. The result is a list of each project.title and the total amount of pledges that match each projects key.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Day Ten]]></title>
