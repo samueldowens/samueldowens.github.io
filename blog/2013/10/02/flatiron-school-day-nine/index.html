@@ -9,7 +9,7 @@
   <meta name="author" content="Samuel Owens">
 
   
-  <meta name="description" content="Flatiron School Day Nine Oct 2nd, 2013 var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-44580555-1']); _gaq.push(['_trackPageview']); (function &hellip;">
+  <meta name="description" content="Flatiron School Day Nine Oct 2nd, 2013 Week two day two was a rough one for me. I&rsquo;m finally starting to feel really stressed by the material. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,14 +18,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://samueldowens.github.io/blog/2013/10/02/flatiron-school-day-nine">
+  <link rel="canonical" href="http://samueldowens.github.io/blog/2013/10/02/flatiron-school-day-nine/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="http://feeds.feedburner.com/ MyFlatironSchoolBlog" rel="alternate" title="My Flatiron School Blog" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/ MyFlatironSchoolBlog" rel="alternate" title="My Flatiron School Blog" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -93,20 +92,6 @@
 
 
 <time datetime="2013-10-02T08:23:00-04:00" pubdate data-updated="true">Oct 2<span>nd</span>, 2013</time></p>
-
-    <script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-44580555-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
   </header>
   
   <p>Week two day two was a rough one for me. I&rsquo;m finally starting to feel really stressed by the material. I&rsquo;m spending a lot more time fighting my way through producing what I feel is sub-par code than I&rsquo;d like. I&rsquo;m really hoping that I&rsquo;m reaching the end of a plateau in my learning and will take a jump forward soon. I&rsquo;m having trouble breaking problems down into smaller pieces and still keeping track of everything. I&rsquo;m also having some issues figuring out how to refactor my code from the &lsquo;works&rsquo; stage to the &lsquo;right&rsquo; stage. Week 2 day 3 we get a big chunk of time to catch up on stuff though, so I&rsquo;m hoping that my not feeling confident about my code from the last day or two isn&rsquo;t uncommon and that I come out of Wednesday feeling a bit better.</p>
@@ -141,7 +126,7 @@
       
         <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://samueldowens.github.io/blog/2013/10/02/flatiron-school-day-nine/" data-via="samueldowens" data-counturl="http://samueldowens.github.io/blog/2013/10/02/flatiron-school-day-nine/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://samueldowens.github.io/blog/2013/10/02/flatiron-school-day-nine/" data-via="samueldowens" data-counturl="http://samueldowens.github.io/blog/2013/10/02/flatiron-school-day-nine/" >Tweet</a>
   
   
   
@@ -196,13 +181,21 @@
 
 
 <section>
-<h1>On Twitter:</h1>
-<div>
-<a class="twitter-timeline"  href="https://twitter.com/SamuelDOwens"  data-widget-id="382896699997315072">Tweets by @SamuelDOwens</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-</div>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("samueldowens", , );
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/samueldowens">@samueldowens</a></p>
+  
 </section>
+
 
   
 </aside>
@@ -240,7 +233,7 @@
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id; js.async = true;
+  js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
@@ -254,7 +247,7 @@
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>
