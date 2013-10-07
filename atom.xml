@@ -4,7 +4,7 @@
   <title><![CDATA[My Flatiron School Blog]]></title>
   <link href="http://samueldowens.github.io/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-04T10:05:25-04:00</updated>
+  <updated>2013-10-07T08:48:21-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day Weekend Two]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/07/flatiron-school-weekend-two/"/>
+    <updated>2013-10-07T08:38:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/07/flatiron-school-weekend-two</id>
+    <content type="html"><![CDATA[<p>Weekend two was a lot of fun. I managed to end up pretty comfortable with SQL pretty early in the day and we moved onto some other new and interesting things later.</p>
+
+<p>Namely Nokogiri, this ruby gem for scraping web pages was the big learning focus of my weekend. Our project was to use Nokogiri to scrape the Flatiron student webpage for information on each student and export that data into an SQL database. It took a lot of trial and error playing around with Nokogiri before we figured things out, but by the end my whole group was pretty comfortable navigating the trees of data that is HTML.</p>
+
+<p>We also had to redo the quiz from week one but make it object oriented, having to have classes in each of the previous tests. I thought the difficulty on that assignment was pretty easy but that it was useful in providing repetition in looking at grouping things as a class.</p>
+
+<p>Lastly we were given an assignment called playlister, which was a multi-file, multi-class assignment that had a suite of rspec tests that needed to be passed. I sure hope this was the stretch assignment for the weekend as I spent a lot of time struggling with it.</p>
+
+<p>I&rsquo;m really looking forward to week three. After two weeks I&rsquo;m already amazed at the tools we&rsquo;re beginning to scratch the surface of using. I can&rsquo;t imagine after 10 more weeks how many cool things we&rsquo;ll be able to build. I feel like a child who just learned what a car can do but whose feet can&rsquo;t yet reach the pedals. Once they can it&rsquo;s going to be a fun time!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Day Eleven]]></title>
