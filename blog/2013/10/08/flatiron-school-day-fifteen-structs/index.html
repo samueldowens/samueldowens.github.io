@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: SQL - My Flatiron School Blog</title>
+  <title>Flatiron School Day Fifteen - Structs - My Flatiron School Blog</title>
   <meta name="author" content="Samuel Owens">
 
   
-  <meta name="description" content="Category: SQL">
+  <meta name="description" content="Today I&rsquo;m going to take a break from &lsquo;talking about my day&rsquo; and instead try and explain something technical. Today I&rsquo;m going &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://samueldowens.github.ioblog/categories/sql/">
+  <link rel="canonical" href="http://samueldowens.github.io/blog/2013/10/08/flatiron-school-day-fifteen-structs/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -75,36 +75,110 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: SQL</h1>
+    
+      <h1 class="entry-title">Flatiron School Day Fifteen - Structs</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-08T08:31:00-04:00" pubdate data-updated="true">Oct 8<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>Today I&rsquo;m going to take a break from &lsquo;talking about my day&rsquo; and instead try and explain something technical. Today I&rsquo;m going to talk about structs, a concept in Ruby we haven&rsquo;t actually learned at Flatiron yet. This article is inspired by the presentation on <a href="https://speakerdeck.com/metaskills/ruby-struct/" title="Speaker Deck by Ken Collins">link</a>, so thanks Ken for getting me thinking about structs!</p>
 
-  
-  <h2>2013</h2>
+<p>I&rsquo;m going to try and break down structs into three parts. Concept, Code and Uses&hellip;</p>
 
-<article>
-  
-<h1><a href="/blog/2013/10/07/flatiron-school-weekend-two/">Flatiron School Day Weekend Two</a></h1>
-<time datetime="2013-10-07T08:38:00-04:00" pubdate><span class='month'>Oct</span> <span class='day'>07</span> <span class='year'>2013</span></time>
+<p>Concept: A struct is a miniture class, created quickly and at its core it is a class that only has basic getter and setter methods.</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/nokogiri/'>Nokogiri</a>, <a class='category' href='/blog/categories/rspec/'>RSpec</a>, <a class='category' href='/blog/categories/sql/'>SQL</a>, <a class='category' href='/blog/categories/flatiron-school/'>flatiron school</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a></span>
-</footer>
+<p>Code: There are a few ways to create a struct. I think the easiest to do and understand is as follows&hellip;</p>
+
+<figure class='code'><figcaption><span>Struct Creation</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Location</span> <span class="o">=</span> <span class="no">Struct</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:lattitude</span><span class="p">,</span> <span class="ss">:longitude</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<p>That&rsquo;s all there is to it, this quickly creates a Struct Class called Location that keeps track of a locations name, lattitude and longitude coordinates. Which brings us to&hellip;</p>
 
+<p>Uses: Structs seem like they are best used for set values for things that don&rsquo;t need to have any class methods. Things like GPS locations seem like a great reason to use a struct instead of another structure. Any time where you know there is a fixed amount of information you need a struct can be a quick and easy way of storing information about those things, I&rsquo;m going to try and use structs more and see if I can&rsquo;t find even more useful ways to implement them!</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Samuel Owens</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-08T08:31:00-04:00" pubdate data-updated="true">Oct 8<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/flatiron-school/'>flatiron school</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>, <a class='category' href='/blog/categories/structs/'>structs</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://samueldowens.github.io/blog/2013/10/08/flatiron-school-day-fifteen-structs/" data-via="samueldowens" data-counturl="http://samueldowens.github.io/blog/2013/10/08/flatiron-school-day-fifteen-structs/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/10/07/flatiron-school-weekend-two/" title="Previous Post: Flatiron School Day Weekend Two">&laquo; Flatiron School Day Weekend Two</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -166,7 +240,10 @@
       var disqus_shortname = 'myflatironschoolblog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://samueldowens.github.io/blog/2013/10/08/flatiron-school-day-fifteen-structs/';
+        var disqus_url = 'http://samueldowens.github.io/blog/2013/10/08/flatiron-school-day-fifteen-structs/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

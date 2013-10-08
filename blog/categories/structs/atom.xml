@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: structs | My Flatiron School Blog]]></title>
+  <link href="http://samueldowens.github.io/blog/categories/structs/atom.xml" rel="self"/>
+  <link href="http://samueldowens.github.io/"/>
+  <updated>2013-10-08T08:56:02-04:00</updated>
+  <id>http://samueldowens.github.io/</id>
+  <author>
+    <name><![CDATA[Samuel Owens]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day Fifteen - Structs]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/08/flatiron-school-day-fifteen-structs/"/>
+    <updated>2013-10-08T08:31:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/08/flatiron-school-day-fifteen-structs</id>
+    <content type="html"><![CDATA[<p>Today I&rsquo;m going to take a break from &lsquo;talking about my day&rsquo; and instead try and explain something technical. Today I&rsquo;m going to talk about structs, a concept in Ruby we haven&rsquo;t actually learned at Flatiron yet. This article is inspired by the presentation on <a href="https://speakerdeck.com/metaskills/ruby-struct/" title="Speaker Deck by Ken Collins">link</a>, so thanks Ken for getting me thinking about structs!</p>
+
+<p>I&rsquo;m going to try and break down structs into three parts. Concept, Code and Uses&hellip;</p>
+
+<p>Concept: A struct is a miniture class, created quickly and at its core it is a class that only has basic getter and setter methods.</p>
+
+<p>Code: There are a few ways to create a struct. I think the easiest to do and understand is as follows&hellip;</p>
+
+<p>```ruby Struct Creation
+Location = Struct.new(:name, :lattitude, :longitude)</p>
+
+<p>```
+That&rsquo;s all there is to it, this quickly creates a Struct Class called Location that keeps track of a locations name, lattitude and longitude coordinates. Which brings us to&hellip;</p>
+
+<p>Uses: Structs seem like they are best used for set values for things that don&rsquo;t need to have any class methods. Things like GPS locations seem like a great reason to use a struct instead of another structure. Any time where you know there is a fixed amount of information you need a struct can be a quick and easy way of storing information about those things, I&rsquo;m going to try and use structs more and see if I can&rsquo;t find even more useful ways to implement them!</p>
+]]></content>
+  </entry>
+  
+</feed>

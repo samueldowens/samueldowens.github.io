@@ -9,7 +9,7 @@
   <meta name="author" content="Samuel Owens">
 
   
-  <meta name="description" content="Weekend two was a lot of fun. I managed to end up pretty comfortable with SQL pretty early in the day and we moved onto some other new and &hellip;">
+  <meta name="description" content="Today I&rsquo;m going to take a break from &lsquo;talking about my day&rsquo; and instead try and explain something technical. Today I&rsquo;m going &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,59 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/10/08/flatiron-school-day-fifteen-structs/">Flatiron School Day Fifteen - Structs</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-08T08:31:00-04:00" pubdate data-updated="true">Oct 8<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/10/08/flatiron-school-day-fifteen-structs/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Today I&rsquo;m going to take a break from &lsquo;talking about my day&rsquo; and instead try and explain something technical. Today I&rsquo;m going to talk about structs, a concept in Ruby we haven&rsquo;t actually learned at Flatiron yet. This article is inspired by the presentation on <a href="https://speakerdeck.com/metaskills/ruby-struct/" title="Speaker Deck by Ken Collins">link</a>, so thanks Ken for getting me thinking about structs!</p>
+
+<p>I&rsquo;m going to try and break down structs into three parts. Concept, Code and Uses&hellip;</p>
+
+<p>Concept: A struct is a miniture class, created quickly and at its core it is a class that only has basic getter and setter methods.</p>
+
+<p>Code: There are a few ways to create a struct. I think the easiest to do and understand is as follows&hellip;</p>
+
+<figure class='code'><figcaption><span>Struct Creation</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Location</span> <span class="o">=</span> <span class="no">Struct</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:lattitude</span><span class="p">,</span> <span class="ss">:longitude</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That&rsquo;s all there is to it, this quickly creates a Struct Class called Location that keeps track of a locations name, lattitude and longitude coordinates. Which brings us to&hellip;</p>
+
+<p>Uses: Structs seem like they are best used for set values for things that don&rsquo;t need to have any class methods. Things like GPS locations seem like a great reason to use a struct instead of another structure. Any time where you know there is a fixed amount of information you need a struct can be a quick and easy way of storing information about those things, I&rsquo;m going to try and use structs more and see if I can&rsquo;t find even more useful ways to implement them!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -667,49 +720,9 @@ end<br></p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/24/hello-world/">Flatiron School Day One</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-24T17:24:00-04:00" pubdate data-updated="true">Sep 24<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/09/24/hello-world/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It’s been one day and I can already tell this is going to be a period of weeks that defines my future. The first day of class 003 and the first day in the new Flatiron campus was an amazing experience. A giant space filled with like-minded nerds and geeks from all different backgrounds coming together to code for an intense amount of time.</p>
-
-<p>The best part? At the end of a long-day it hadn’t become a grind. I was laughing just as much when we wrapped up as when we started and wished the staff had let us go a little further as I was really digging into cleaning up the CSS in our project.</p>
-
-<p>I can’t wait to see what the next 12 weeks hold.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -720,6 +733,10 @@ end<br></p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/10/08/flatiron-school-day-fifteen-structs/">Flatiron School Day Fifteen - Structs</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/10/07/flatiron-school-weekend-two/">Flatiron School Day Weekend Two</a>
@@ -735,10 +752,6 @@ end<br></p>
     
       <li class="post">
         <a href="/blog/2013/10/02/flatiron-school-day-nine/">Flatiron School Day Nine</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/10/01/flatiron-school-day-8/">Flatiron School Day Eight</a>
       </li>
     
   </ul>
