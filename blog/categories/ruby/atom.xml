@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | My Flatiron School Blog]]></title>
   <link href="http://samueldowens.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-08T08:57:51-04:00</updated>
+  <updated>2013-10-08T09:07:21-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -22,9 +22,9 @@
 
 <p>I&rsquo;m going to try and break down structs into three parts. Concept, Code and Uses&hellip;</p>
 
-<p>Concept: A struct is a miniture class, created quickly and at its core it is a class that only has basic getter and setter methods.</p>
+<p><b>Concept:</b> A struct is a miniture class, created quickly and at its core it is a class that only has basic getter and setter methods.</p>
 
-<p>Code: There are a few ways to create a struct. I think the easiest to do and understand is as follows&hellip;</p>
+<p><b>Code:</b> There are a few ways to create a struct. I think the easiest to do and understand is as follows&hellip;</p>
 
 <p>```ruby Struct Creation
 Location = Struct.new(:name, :lattitude, :longitude)</p>
@@ -32,7 +32,7 @@ Location = Struct.new(:name, :lattitude, :longitude)</p>
 <p>```
 That&rsquo;s all there is to it, this quickly creates a Struct Class called Location that keeps track of a locations name, lattitude and longitude coordinates. Which brings us to&hellip;</p>
 
-<p>Uses: Structs seem like they are best used for set values for things that don&rsquo;t need to have any class methods. Things like GPS locations seem like a great reason to use a struct instead of another structure. Any time where you know there is a fixed amount of information you need a struct can be a quick and easy way of storing information about those things, I&rsquo;m going to try and use structs more and see if I can&rsquo;t find even more useful ways to implement them!</p>
+<p><b>Uses:</b> Structs seem like they are best used for set values for things that don&rsquo;t need to have any class methods. Things like GPS locations seem like a great reason to use a struct instead of another structure. Any time where you know there is a fixed amount of information you need a struct can be a quick and easy way of storing information about those things, I&rsquo;m going to try and use structs more and see if I can&rsquo;t find even more useful ways to implement them!</p>
 ]]></content>
   </entry>
   
