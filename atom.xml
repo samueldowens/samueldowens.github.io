@@ -4,7 +4,7 @@
   <title><![CDATA[My Flatiron School Blog]]></title>
   <link href="http://samueldowens.github.io/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-08T08:56:02-04:00</updated>
+  <updated>2013-10-08T08:57:51-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -18,7 +18,7 @@
     <link href="http://samueldowens.github.io/blog/2013/10/08/flatiron-school-day-fifteen-structs/"/>
     <updated>2013-10-08T08:31:00-04:00</updated>
     <id>http://samueldowens.github.io/blog/2013/10/08/flatiron-school-day-fifteen-structs</id>
-    <content type="html"><![CDATA[<p>Today I&rsquo;m going to take a break from &lsquo;talking about my day&rsquo; and instead try and explain something technical. Today I&rsquo;m going to talk about structs, a concept in Ruby we haven&rsquo;t actually learned at Flatiron yet. This article is inspired by the presentation on <a href="https://speakerdeck.com/metaskills/ruby-struct/" title="Speaker Deck by Ken Collins">link</a>, so thanks Ken for getting me thinking about structs!</p>
+    <content type="html"><![CDATA[<p>Today I&rsquo;m going to take a break from &lsquo;talking about my day&rsquo; and instead try and explain something technical. Today I&rsquo;m going to talk about structs, a concept in Ruby we haven&rsquo;t actually learned at Flatiron yet. This article is inspired by the presentation on <a href="https://speakerdeck.com/metaskills/ruby-struct/" title="Speaker Deck by Ken Collins">Speaker Deck by Ken Collins</a>, so thanks Ken for getting me thinking about structs!</p>
 
 <p>I&rsquo;m going to try and break down structs into three parts. Concept, Code and Uses&hellip;</p>
 
