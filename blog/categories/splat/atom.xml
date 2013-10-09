@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: splat | My Flatiron School Blog]]></title>
+  <title><![CDATA[Category: splat | Traversing the Internets]]></title>
   <link href="http://samueldowens.github.io/blog/categories/splat/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-09T08:47:32-04:00</updated>
+  <updated>2013-10-09T15:06:46-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
