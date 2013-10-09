@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: pareto principal | My Flatiron School Blog]]></title>
+  <link href="http://samueldowens.github.io/blog/categories/pareto-principal/atom.xml" rel="self"/>
+  <link href="http://samueldowens.github.io/"/>
+  <updated>2013-10-09T08:44:33-04:00</updated>
+  <id>http://samueldowens.github.io/</id>
+  <author>
+    <name><![CDATA[Samuel Owens]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day 16 - The Pareto Principal]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/09/the-pareto-principal/"/>
+    <updated>2013-10-09T08:36:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/09/the-pareto-principal</id>
+    <content type="html"><![CDATA[<p>The Pareto principal is also known as the &lsquo;80/20&rsquo; rule. It&rsquo;s a rule I&rsquo;ve heard and seen in various academic endeavours and in business as well. Yesterday was the first time I really looked at it with regard to coding. Avi mentioned during the day that 80% of the work on a project comes in the last 20% of the project and that got me thinking about my work and if the principal applies.</p>
+
+<p>It turns out after looking at my &lsquo;to do&rsquo; list for Flatiron that the only things I have unfinished stand about 80% done. Some are a little further along, some less; but the overwhelming majority of my unfinished work falls right around &lsquo;almost done.&rsquo; It always seems to be that one method I can&rsquo;t get to function correctly, or the one or two tests I just can&rsquo;t seem to get to pass that are holding up some of my work from being completed.</p>
+
+<p>So I&rsquo;ve decided I&rsquo;m going to stop caring about pace. I&rsquo;m not going to find it odd or frustrating anymore when I rush through 80% of a project only to find myself stuck in the mud at the end. I&rsquo;m just going to push through it, knowing that it&rsquo;s completely normal and not something that&rsquo;s going to change.</p>
+]]></content>
+  </entry>
+  
+</feed>

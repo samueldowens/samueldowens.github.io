@@ -4,7 +4,7 @@
   <title><![CDATA[Category: flatiron school | My Flatiron School Blog]]></title>
   <link href="http://samueldowens.github.io/blog/categories/flatiron-school/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-08T09:07:21-04:00</updated>
+  <updated>2013-10-09T08:44:33-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day 16 - The Pareto Principal]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/09/the-pareto-principal/"/>
+    <updated>2013-10-09T08:36:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/09/the-pareto-principal</id>
+    <content type="html"><![CDATA[<p>The Pareto principal is also known as the &lsquo;80/20&rsquo; rule. It&rsquo;s a rule I&rsquo;ve heard and seen in various academic endeavours and in business as well. Yesterday was the first time I really looked at it with regard to coding. Avi mentioned during the day that 80% of the work on a project comes in the last 20% of the project and that got me thinking about my work and if the principal applies.</p>
+
+<p>It turns out after looking at my &lsquo;to do&rsquo; list for Flatiron that the only things I have unfinished stand about 80% done. Some are a little further along, some less; but the overwhelming majority of my unfinished work falls right around &lsquo;almost done.&rsquo; It always seems to be that one method I can&rsquo;t get to function correctly, or the one or two tests I just can&rsquo;t seem to get to pass that are holding up some of my work from being completed.</p>
+
+<p>So I&rsquo;ve decided I&rsquo;m going to stop caring about pace. I&rsquo;m not going to find it odd or frustrating anymore when I rush through 80% of a project only to find myself stuck in the mud at the end. I&rsquo;m just going to push through it, knowing that it&rsquo;s completely normal and not something that&rsquo;s going to change.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Day Fifteen - Structs]]></title>
@@ -110,15 +123,6 @@ and was able to make my code better without breaking its functionality. After
 looking at some of the solutions my classmates came up with however, I still
 know that I have a lot of work to do with refactoring as some of their
 solutions were brilliant!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Flatiron School Day Nine]]></title>
-    <link href="http://samueldowens.github.io/blog/2013/10/02/flatiron-school-day-nine/"/>
-    <updated>2013-10-02T08:23:00-04:00</updated>
-    <id>http://samueldowens.github.io/blog/2013/10/02/flatiron-school-day-nine</id>
-    <content type="html"><![CDATA[<p>Week two day two was a rough one for me. I&rsquo;m finally starting to feel really stressed by the material. I&rsquo;m spending a lot more time fighting my way through producing what I feel is sub-par code than I&rsquo;d like. I&rsquo;m really hoping that I&rsquo;m reaching the end of a plateau in my learning and will take a jump forward soon. I&rsquo;m having trouble breaking problems down into smaller pieces and still keeping track of everything. I&rsquo;m also having some issues figuring out how to refactor my code from the &lsquo;works&rsquo; stage to the &lsquo;right&rsquo; stage. Week 2 day 3 we get a big chunk of time to catch up on stuff though, so I&rsquo;m hoping that my not feeling confident about my code from the last day or two isn&rsquo;t uncommon and that I come out of Wednesday feeling a bit better.</p>
 ]]></content>
   </entry>
   
