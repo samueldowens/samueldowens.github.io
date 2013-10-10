@@ -9,7 +9,7 @@
   <meta name="author" content="Samuel Owens">
 
   
-  <meta name="description" content="The Pareto principal is also known as the &lsquo;80/20&rsquo; rule. It&rsquo;s a rule I&rsquo;ve heard and seen in various academic endeavours and in &hellip;">
+  <meta name="description" content="I wanted to write down a little bit about my understanding of how methods work inside of classes and how to know if you want your method to be &lsquo &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,118 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/10/10/flatiron-school-day-17-class-methods/">Flatiron School Day 17 - Class Methods</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-10T08:33:00-04:00" pubdate data-updated="true">Oct 10<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/10/10/flatiron-school-day-17-class-methods/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I wanted to write down a little bit about my understanding of how methods work inside of classes and how to know if you want your method to be &lsquo;self.method&rsquo; or just &lsquo;method.&rsquo;</p>
+
+<p>Take the following situation&hellip;</p>
+
+<figure class='code'><figcaption><span>The Dog Class</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Dog</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:color</span><span class="p">,</span> <span class="ss">:breed</span><span class="p">,</span> <span class="ss">:number_of_legs</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">fido</span> <span class="o">=</span> <span class="no">Dog</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">fido</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Fido&quot;</span>
+</span><span class='line'><span class="n">fido</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;Red&quot;</span>
+</span><span class='line'><span class="n">fido</span><span class="o">.</span><span class="n">breed</span> <span class="o">=</span> <span class="s2">&quot;Direwolf&quot;</span>
+</span><span class='line'><span class="n">fido</span><span class="o">.</span><span class="n">number_of_legs</span> <span class="o">=</span> <span class="mi">4</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">other_fido</span> <span class="o">=</span> <span class="no">Dog</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">other_fido</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Not Fido&quot;</span>
+</span><span class='line'><span class="n">other_fido</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;Green&quot;</span>
+</span><span class='line'><span class="n">other_fido</span><span class="o">.</span><span class="n">breed</span> <span class="o">=</span> <span class="s2">&quot;Regular Wolf&quot;</span>
+</span><span class='line'><span class="n">other_fido</span><span class="o">.</span><span class="n">number_of_legs</span> <span class="o">=</span> <span class="mi">3</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So we have the class Dog with a few attributes, and we&rsquo;ve created two dogs. Now we&rsquo;re going to create two methods, one to make an individual dog bark and one to make the Dog class bark.</p>
+
+<p>&#8220;`ruby I Should Have Named One of the Dogs Charles BARKley.</p>
+
+<p>class Dog</p>
+
+<p>  def barkley</p>
+
+<pre><code>puts "I AM TOTALLY BARKING YOU GUYS"
+</code></pre>
+
+<p>  end</p>
+
+<p>  def self.bark</p>
+
+<pre><code>puts "THE CONCEPT OF A DOG IS BARKING, RUN FOR YOUR LIVES!"
+</code></pre>
+
+<p>  end</p>
+
+<p>end
+&lsquo;&rsquo;&#8217;</p>
+
+<p>Now, if we put fido.barkley we will see
+&ldquo;I AM TOTALLY BARKING YOU GUYS&rdquo;</p>
+
+<p>If you put fido.bark though, you will get a NoMethodError, because the bark method is defined for the class it was in because we defined it as self.bark, with self referring to the current object its contained within.</p>
+
+<p>So&hellip; If we put Dog.bark we will see
+&ldquo;THE CONCEPT OF A DOG IS BARKING, RUN FOR YOUR LIVES!&rdquo;</p>
+
+<p>Similarly, if we were to call Dog.barkley we would again get a NoMethodError because the method is defined without the self demarcation, telling ruby that it is to be used by individual dogs, not by the class as a whole.</p>
+
+<p>So bringing things back around, if you want your overall class to respond to a method, name it as self.method, if you want a specific instance of that class to respond to it, do not have the self in there.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -658,68 +770,6 @@ end</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/26/flatiron-school-day-three/">Flatiron School Day Three</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-26T08:34:00-04:00" pubdate data-updated="true">Sep 26<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/09/26/flatiron-school-day-three/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Day Three was the easiest day for me thus far with comprehension. It was mostly a review of and practice with GIT, HTML and CSS with some Ruby at towards the end of the day. I think they&rsquo;re trying to get us a lot of repetition with the basics so that when they really hit the harder stuff full force we&rsquo;ll be less-lost on the basics.</p>
-
-<p>I am the most responsible student I have ever been, albiet through three days. I pay attention in class, work as hard as I can on my projects and do my homework thouroughly right away. Yesterday I woke up feeling like I was starting to get a cold, so I made sure to get plenty of vitamin C and went to bed at 9:30 when I was finished with my work to get a little extra sleep to help combat this cold.</p>
-
-<p>I&rsquo;m not yet sure if this is the sign of maturity, or the complete devotion to a singular focus. I&rsquo;m assuming more of the latter, I am so focused on this program that there is nothing else to be concerned about other than working hard at coding and taking care of distractions that might lead to my inability to focus or work as hard as I want to.</p>
-
-<p>One thing that I did learn today was how to use a splat (*) in method arguments in Ruby. With the little Ruby I know, I really enjoy using arrays to solve problems when I can. Normally I would have the array set up ahead of time and use a method to manipulate the array or the data within to solve a given problem. splat gives you some other options on manipulating similar sets of data however.</p>
-
-<p>You can set up a simple splat method as follows to see how it works:</p>
-
-<p>def splat(*inputs)<br>
-puts inputs<br>
-end<br></p>
-
-<p>splat(1,2,4,5,6)</p>
-
-<p>This will output the following:</p>
-
-<p>1<br>
-2<br>
-4<br>
-5<br>
-6<br></p>
-
-<p>This allows you to take a variable quanitity of inputs (it will also take strings) and manipulate them one at a time before deciding what to do with them. An example of when this might be useful would be if you were pulling a bunch of variable types of data from a database and wanted to sort that data, you could have the pieces get input through a splat method and have the method sort them by type (string, float, integer) into arrays before manipulating or looking at the data in the arrays with further functions.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -735,6 +785,10 @@ end<br></p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/10/10/flatiron-school-day-17-class-methods/">Flatiron School Day 17 - Class Methods</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/10/09/the-pareto-principal/">Flatiron School Day 16 - The Pareto Principal</a>
       </li>
     
@@ -748,10 +802,6 @@ end<br></p>
     
       <li class="post">
         <a href="/blog/2013/10/04/flatiron-school-day-eleven/">Flatiron School Day Eleven</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/10/03/flatiron-school-day-ten/">Flatiron School Day Ten</a>
       </li>
     
   </ul>

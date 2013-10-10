@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: class | Traversing the Internets]]></title>
+  <link href="http://samueldowens.github.io/blog/categories/class/atom.xml" rel="self"/>
+  <link href="http://samueldowens.github.io/"/>
+  <updated>2013-10-10T08:52:12-04:00</updated>
+  <id>http://samueldowens.github.io/</id>
+  <author>
+    <name><![CDATA[Samuel Owens]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day 17 - Class Methods]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-17-class-methods/"/>
+    <updated>2013-10-10T08:33:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-17-class-methods</id>
+    <content type="html"><![CDATA[<p>I wanted to write down a little bit about my understanding of how methods work inside of classes and how to know if you want your method to be &lsquo;self.method&rsquo; or just &lsquo;method.&rsquo;</p>
+
+<p>Take the following situation&hellip;</p>
+
+<p>```ruby The Dog Class
+class Dog</p>
+
+<p>  attr_accessor :name, :color, :breed, :number_of_legs</p>
+
+<p>end</p>
+
+<p>fido = Dog.new
+fido.name = &ldquo;Fido&rdquo;
+fido.color = &ldquo;Red&rdquo;
+fido.breed = &ldquo;Direwolf&rdquo;
+fido.number_of_legs = 4</p>
+
+<p>other_fido = Dog.new
+other_fido.name = &ldquo;Not Fido&rdquo;
+other_fido.color = &ldquo;Green&rdquo;
+other_fido.breed = &ldquo;Regular Wolf&rdquo;
+other_fido.number_of_legs = 3
+```</p>
+
+<p>So we have the class Dog with a few attributes, and we&rsquo;ve created two dogs. Now we&rsquo;re going to create two methods, one to make an individual dog bark and one to make the Dog class bark.</p>
+
+<p>```ruby I Should Have Named One of the Dogs Charles BARKley.</p>
+
+<p>class Dog</p>
+
+<p>  def barkley</p>
+
+<pre><code>puts "I AM TOTALLY BARKING YOU GUYS"
+</code></pre>
+
+<p>  end</p>
+
+<p>  def self.bark</p>
+
+<pre><code>puts "THE CONCEPT OF A DOG IS BARKING, RUN FOR YOUR LIVES!"
+</code></pre>
+
+<p>  end</p>
+
+<p>end
+&lsquo;&rsquo;'</p>
+
+<p>Now, if we put fido.barkley we will see
+&ldquo;I AM TOTALLY BARKING YOU GUYS&rdquo;</p>
+
+<p>If you put fido.bark though, you will get a NoMethodError, because the bark method is defined for the class it was in because we defined it as self.bark, with self referring to the current object its contained within.</p>
+
+<p>So&hellip; If we put Dog.bark we will see
+&ldquo;THE CONCEPT OF A DOG IS BARKING, RUN FOR YOUR LIVES!&rdquo;</p>
+
+<p>Similarly, if we were to call Dog.barkley we would again get a NoMethodError because the method is defined without the self demarcation, telling ruby that it is to be used by individual dogs, not by the class as a whole.</p>
+
+<p>So bringing things back around, if you want your overall class to respond to a method, name it as self.method, if you want a specific instance of that class to respond to it, do not have the self in there.</p>
+]]></content>
+  </entry>
+  
+</feed>

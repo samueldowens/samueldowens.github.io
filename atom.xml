@@ -4,7 +4,7 @@
   <title><![CDATA[Traversing the Internets]]></title>
   <link href="http://samueldowens.github.io/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-09T15:06:46-04:00</updated>
+  <updated>2013-10-10T08:52:12-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -12,6 +12,89 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day 17 - Class Methods]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-17-class-methods/"/>
+    <updated>2013-10-10T08:33:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-17-class-methods</id>
+    <content type="html"><![CDATA[<p>I wanted to write down a little bit about my understanding of how methods work inside of classes and how to know if you want your method to be &lsquo;self.method&rsquo; or just &lsquo;method.&rsquo;</p>
+
+<p>Take the following situation&hellip;</p>
+
+<figure class='code'><figcaption><span>The Dog Class</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Dog</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:color</span><span class="p">,</span> <span class="ss">:breed</span><span class="p">,</span> <span class="ss">:number_of_legs</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">fido</span> <span class="o">=</span> <span class="no">Dog</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">fido</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Fido&quot;</span>
+</span><span class='line'><span class="n">fido</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;Red&quot;</span>
+</span><span class='line'><span class="n">fido</span><span class="o">.</span><span class="n">breed</span> <span class="o">=</span> <span class="s2">&quot;Direwolf&quot;</span>
+</span><span class='line'><span class="n">fido</span><span class="o">.</span><span class="n">number_of_legs</span> <span class="o">=</span> <span class="mi">4</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">other_fido</span> <span class="o">=</span> <span class="no">Dog</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">other_fido</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Not Fido&quot;</span>
+</span><span class='line'><span class="n">other_fido</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;Green&quot;</span>
+</span><span class='line'><span class="n">other_fido</span><span class="o">.</span><span class="n">breed</span> <span class="o">=</span> <span class="s2">&quot;Regular Wolf&quot;</span>
+</span><span class='line'><span class="n">other_fido</span><span class="o">.</span><span class="n">number_of_legs</span> <span class="o">=</span> <span class="mi">3</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So we have the class Dog with a few attributes, and we&rsquo;ve created two dogs. Now we&rsquo;re going to create two methods, one to make an individual dog bark and one to make the Dog class bark.</p>
+
+<p>&#8220;`ruby I Should Have Named One of the Dogs Charles BARKley.</p>
+
+<p>class Dog</p>
+
+<p>  def barkley</p>
+
+<pre><code>puts "I AM TOTALLY BARKING YOU GUYS"
+</code></pre>
+
+<p>  end</p>
+
+<p>  def self.bark</p>
+
+<pre><code>puts "THE CONCEPT OF A DOG IS BARKING, RUN FOR YOUR LIVES!"
+</code></pre>
+
+<p>  end</p>
+
+<p>end
+&lsquo;&rsquo;&#8217;</p>
+
+<p>Now, if we put fido.barkley we will see
+&ldquo;I AM TOTALLY BARKING YOU GUYS&rdquo;</p>
+
+<p>If you put fido.bark though, you will get a NoMethodError, because the bark method is defined for the class it was in because we defined it as self.bark, with self referring to the current object its contained within.</p>
+
+<p>So&hellip; If we put Dog.bark we will see
+&ldquo;THE CONCEPT OF A DOG IS BARKING, RUN FOR YOUR LIVES!&rdquo;</p>
+
+<p>Similarly, if we were to call Dog.barkley we would again get a NoMethodError because the method is defined without the self demarcation, telling ruby that it is to be used by individual dogs, not by the class as a whole.</p>
+
+<p>So bringing things back around, if you want your overall class to respond to a method, name it as self.method, if you want a specific instance of that class to respond to it, do not have the self in there.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Day 16 - The Pareto Principal]]></title>
