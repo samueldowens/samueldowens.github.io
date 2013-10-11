@@ -9,7 +9,7 @@
   <meta name="author" content="Samuel Owens">
 
   
-  <meta name="description" content="I wanted to write down a little bit about my understanding of how methods work inside of classes and how to know if you want your method to be &lsquo &hellip;">
+  <meta name="description" content="I was going to write another small technical post today but that is going to have to wait until tomorrow. Today I wanted to remind myself and anybody &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,7 +82,51 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/10/10/flatiron-school-day-17-class-methods/">Flatiron School Day 17 - Class Methods</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/10/11/flatiron-school-day-eightteen-refactor_fu/">Flatiron School Day Eighteen - Suck It Up, Break Your Code.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-11T08:32:00-04:00" pubdate data-updated="true">Oct 11<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/10/11/flatiron-school-day-eightteen-refactor_fu/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I was going to write another small technical post today but that is going to have to wait until tomorrow. Today I wanted to remind myself and anybody who reads this about the mental blocks with regard to refactoring your code. Here at Flatiron we follow the (I think Kent Beck) motto of &ldquo;Make it work, make it right, make it fast.&rdquo; Sometimes this leads to the first working piece of code being pretty ugly. If you&rsquo;ve just spent hours in a team working through pitfalls to get the code working, it may be overwhelming to go ahead and start refactoring the code once its running and/or all your tests are green.</p>
+
+<p>The big thing I wanted to focus on is that provided you&rsquo;re not living in an alternate dimension where there is no Git, you can feel free to burn your working code to the ground and swim in its ashes. You still have that working code in version control, there is nothing intimidating about altering it to where it starts failing tests or stops functioning. Even if you never find a better solution on a given project, you never will if you don&rsquo;t start smashing your code and trying to rebuild them.</p>
+
+<p>In Office Space they took the printer out into a field after one too many &ldquo;pc load letter&rdquo; errors and smashed it to pieces. Unfortunately with hardware, its pretty difficult to put back together. Count yourself lucky that with code that is not the case, you can destroy your project over and over again and roll it back if you aren&rsquo;t making useful progress.</p>
+
+<p>Get over the fear of the red results and break your code, it&rsquo;s liberating.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/10/10/flatiron-school-day-seventeen-class-methods/">Flatiron School Day 17 - Class Methods</a></h1>
     
     
       <p class="meta">
@@ -100,7 +144,7 @@
 
 <time datetime="2013-10-10T08:33:00-04:00" pubdate data-updated="true">Oct 10<span>th</span>, 2013</time>
         
-         | <a href="/blog/2013/10/10/flatiron-school-day-17-class-methods/#disqus_thread">Comments</a>
+         | <a href="/blog/2013/10/10/flatiron-school-day-seventeen-class-methods/#disqus_thread">Comments</a>
         
       </p>
     
@@ -718,62 +762,6 @@ solutions were brilliant!</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/27/flatiron-school-day-four/">Flatiron School Day Four</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-27T08:23:00-04:00" pubdate data-updated="true">Sep 27<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/09/27/flatiron-school-day-four/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>On day four we really got into Ruby. Most of the day was spent in lectures with a few labs mixed in and was punctuated by most of us being at the campus pretty late working on our homework.</p>
-
-<p>A few takeaways that I need to make sure get ingrained in my head&hellip;</p>
-
-<p>A method always returns the return of the last command it executes. This means if you write a method to manipulate an array and want to call that method later and have it return the manipulated array that you need to call the name of the array at the end of the method in order for the method itself to return that array.</p>
-
-<p>Puts ALWAYS returns nil. So try really hard not to actually put it in a method. Definitely make sure that its not the last thing in an array unless I want the array to return nil.</p>
-
-<p>I also saw syntax I like for short if statements to keep them more compact.</p>
-
-<p>if x == 1
-   puts &ldquo;x is 1!&rdquo;
-end</p>
-
-<p>is equivalent to</p>
-
-<p>puts &ldquo;x is 1!&rdquo; if x == 1</p>
-
-<p>I think the second iteration of code looks much cleaner and would like to start thinking of short if statements that way before I put them in a block.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -789,7 +777,11 @@ end</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/10/10/flatiron-school-day-17-class-methods/">Flatiron School Day 17 - Class Methods</a>
+        <a href="/blog/2013/10/11/flatiron-school-day-eightteen-refactor_fu/">Flatiron School Day Eighteen - Suck It Up, Break Your Code.</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/10/flatiron-school-day-seventeen-class-methods/">Flatiron School Day 17 - Class Methods</a>
       </li>
     
       <li class="post">
@@ -802,10 +794,6 @@ end</p>
     
       <li class="post">
         <a href="/blog/2013/10/07/flatiron-school-weekend-two/">Flatiron School Day Weekend Two</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/10/04/flatiron-school-day-eleven/">Flatiron School Day Eleven</a>
       </li>
     
   </ul>

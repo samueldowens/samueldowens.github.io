@@ -4,7 +4,7 @@
   <title><![CDATA[Traversing the Internets]]></title>
   <link href="http://samueldowens.github.io/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-10T08:54:01-04:00</updated>
+  <updated>2013-10-11T09:50:28-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -14,10 +14,25 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Flatiron School Day Eighteen - Suck It Up, Break Your Code.]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/11/flatiron-school-day-eightteen-refactor_fu/"/>
+    <updated>2013-10-11T08:32:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/11/flatiron-school-day-eightteen-refactor_fu</id>
+    <content type="html"><![CDATA[<p>I was going to write another small technical post today but that is going to have to wait until tomorrow. Today I wanted to remind myself and anybody who reads this about the mental blocks with regard to refactoring your code. Here at Flatiron we follow the (I think Kent Beck) motto of &ldquo;Make it work, make it right, make it fast.&rdquo; Sometimes this leads to the first working piece of code being pretty ugly. If you&rsquo;ve just spent hours in a team working through pitfalls to get the code working, it may be overwhelming to go ahead and start refactoring the code once its running and/or all your tests are green.</p>
+
+<p>The big thing I wanted to focus on is that provided you&rsquo;re not living in an alternate dimension where there is no Git, you can feel free to burn your working code to the ground and swim in its ashes. You still have that working code in version control, there is nothing intimidating about altering it to where it starts failing tests or stops functioning. Even if you never find a better solution on a given project, you never will if you don&rsquo;t start smashing your code and trying to rebuild them.</p>
+
+<p>In Office Space they took the printer out into a field after one too many &ldquo;pc load letter&rdquo; errors and smashed it to pieces. Unfortunately with hardware, its pretty difficult to put back together. Count yourself lucky that with code that is not the case, you can destroy your project over and over again and roll it back if you aren&rsquo;t making useful progress.</p>
+
+<p>Get over the fear of the red results and break your code, it&rsquo;s liberating.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Flatiron School Day 17 - Class Methods]]></title>
-    <link href="http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-17-class-methods/"/>
+    <link href="http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-seventeen-class-methods/"/>
     <updated>2013-10-10T08:33:00-04:00</updated>
-    <id>http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-17-class-methods</id>
+    <id>http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-seventeen-class-methods</id>
     <content type="html"><![CDATA[<p>I wanted to write down a little bit about my understanding of how methods work inside of classes and how to know if you want your method to be &lsquo;self.method&rsquo; or just &lsquo;method.&rsquo;</p>
 
 <p>Take the following situation&hellip;</p>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: class | Traversing the Internets]]></title>
   <link href="http://samueldowens.github.io/blog/categories/class/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-10T08:54:01-04:00</updated>
+  <updated>2013-10-11T09:50:28-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Day 17 - Class Methods]]></title>
-    <link href="http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-17-class-methods/"/>
+    <link href="http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-seventeen-class-methods/"/>
     <updated>2013-10-10T08:33:00-04:00</updated>
-    <id>http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-17-class-methods</id>
+    <id>http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-seventeen-class-methods</id>
     <content type="html"><![CDATA[<p>I wanted to write down a little bit about my understanding of how methods work inside of classes and how to know if you want your method to be &lsquo;self.method&rsquo; or just &lsquo;method.&rsquo;</p>
 
 <p>Take the following situation&hellip;</p>

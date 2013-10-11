@@ -4,7 +4,7 @@
   <title><![CDATA[Category: flatiron school | Traversing the Internets]]></title>
   <link href="http://samueldowens.github.io/blog/categories/flatiron-school/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-10T08:54:01-04:00</updated>
+  <updated>2013-10-11T09:50:28-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -14,10 +14,25 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Flatiron School Day Eighteen - Suck It Up, Break Your Code.]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/11/flatiron-school-day-eightteen-refactor_fu/"/>
+    <updated>2013-10-11T08:32:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/11/flatiron-school-day-eightteen-refactor_fu</id>
+    <content type="html"><![CDATA[<p>I was going to write another small technical post today but that is going to have to wait until tomorrow. Today I wanted to remind myself and anybody who reads this about the mental blocks with regard to refactoring your code. Here at Flatiron we follow the (I think Kent Beck) motto of &ldquo;Make it work, make it right, make it fast.&rdquo; Sometimes this leads to the first working piece of code being pretty ugly. If you&rsquo;ve just spent hours in a team working through pitfalls to get the code working, it may be overwhelming to go ahead and start refactoring the code once its running and/or all your tests are green.</p>
+
+<p>The big thing I wanted to focus on is that provided you&rsquo;re not living in an alternate dimension where there is no Git, you can feel free to burn your working code to the ground and swim in its ashes. You still have that working code in version control, there is nothing intimidating about altering it to where it starts failing tests or stops functioning. Even if you never find a better solution on a given project, you never will if you don&rsquo;t start smashing your code and trying to rebuild them.</p>
+
+<p>In Office Space they took the printer out into a field after one too many &ldquo;pc load letter&rdquo; errors and smashed it to pieces. Unfortunately with hardware, its pretty difficult to put back together. Count yourself lucky that with code that is not the case, you can destroy your project over and over again and roll it back if you aren&rsquo;t making useful progress.</p>
+
+<p>Get over the fear of the red results and break your code, it&rsquo;s liberating.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Flatiron School Day 17 - Class Methods]]></title>
-    <link href="http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-17-class-methods/"/>
+    <link href="http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-seventeen-class-methods/"/>
     <updated>2013-10-10T08:33:00-04:00</updated>
-    <id>http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-17-class-methods</id>
+    <id>http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-seventeen-class-methods</id>
     <content type="html"><![CDATA[<p>I wanted to write down a little bit about my understanding of how methods work inside of classes and how to know if you want your method to be &lsquo;self.method&rsquo; or just &lsquo;method.&rsquo;</p>
 
 <p>Take the following situation&hellip;</p>
@@ -129,37 +144,6 @@ That&rsquo;s all there is to it, this quickly creates a Struct Class called Loca
 <p>Lastly we were given an assignment called playlister, which was a multi-file, multi-class assignment that had a suite of rspec tests that needed to be passed. I sure hope this was the stretch assignment for the weekend as I spent a lot of time struggling with it.</p>
 
 <p>I&rsquo;m really looking forward to week three. After two weeks I&rsquo;m already amazed at the tools we&rsquo;re beginning to scratch the surface of using. I can&rsquo;t imagine after 10 more weeks how many cool things we&rsquo;ll be able to build. I feel like a child who just learned what a car can do but whose feet can&rsquo;t yet reach the pedals. Once they can it&rsquo;s going to be a fun time!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Flatiron School Day Eleven]]></title>
-    <link href="http://samueldowens.github.io/blog/2013/10/04/flatiron-school-day-eleven/"/>
-    <updated>2013-10-04T08:23:00-04:00</updated>
-    <id>http://samueldowens.github.io/blog/2013/10/04/flatiron-school-day-eleven</id>
-    <content type="html"><![CDATA[<p>Day Eleven kicked off a day of very little actual Ruby. In the morning we worked on a debugging project where we were handed some broken ruby code and the expectations for how it was supposed to work and had to fix it. I really enjoyed that project, as much as I like building new things its also fun to fix broken stuff. After that though, the rest of the day was spent on SQL.</p>
-
-<p>Something I like about Flatiron is that we learn everything from the ground up. The magic of a lot of things like Rails and Active Record will be understood by us as we will have learned to do everything without them. That is exactly how I want to learn to program. That said, it&rsquo;s also a pain in the butt. Writing SQL queries isn&rsquo;t conceptually difficult, though the new syntax creates some conflicts, but writing it in sublime as a .sql file and smashing it into a DB in BASH is a more tedious process than I think is probably necessary. I&rsquo;m about ready for Active Record!</p>
-
-<p>Most of the classes issues seemed to stem from Queries and Joins. Most of the organizing of the databases came pretty naturally to most people I talked to, but there is a lot of syntax with queries/joins that can be pretty confusing. I&rsquo;m going to post a snippit of my code and try and explain it&hellip;</p>
-
-<p>``` sql Queries and Joins</p>
-
-<p>SELECT project.title, SUM(pledge.amount) AS &lsquo;total_pledge_amount&rsquo;
-FROM
-project
-INNER JOIN
-pledge
-ON
-project.id = pledge.project_id
-GROUP BY
-project.title;</p>
-
-<p>```</p>
-
-<p>So, this query has several parts which I will try and explain correctly one at a time.</p>
-
-<p>The first is SELECT. This is the specific data we want this query to look at. In this case its the &lsquo;title&rsquo; column from the &lsquo;project&rsquo; table and the sum of the &lsquo;amount&rsquo; column from the &lsquo;pledge&rsquo; table. The AS key just renames the result of the SUM function to &lsquo;total_pledge_amount&rsquo; and could be removed and the query would still function. Next is FROM, we are joining from the project table, using an INNER JOIN with the pledge table. I reversed the places of project and pledge and got the same results, so I&rsquo;m not yet sure where it would be important to specify one table in front of another. After that is ON, which is where the JOIN will link the two tables based on a mutual key. In this case its the primary key of project (project.id) and the foreign key in pledge that corresponds with the project primary key (pledge.project_id). Lastly is GROUP BY for which i put &lsquo;project.title&rsquo; this orders the query results alphabetically by the &lsquo;title&rsquo; column in the &lsquo;project&rsquo; table. The result is a list of each project.title and the total amount of pledges that match each projects key.</p>
 ]]></content>
   </entry>
   
