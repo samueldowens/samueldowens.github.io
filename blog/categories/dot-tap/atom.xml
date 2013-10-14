@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: .tap | Traversing the Internets]]></title>
+  <link href="http://samueldowens.github.io/blog/categories/dot-tap/atom.xml" rel="self"/>
+  <link href="http://samueldowens.github.io/"/>
+  <updated>2013-10-14T10:28:48-04:00</updated>
+  <id>http://samueldowens.github.io/</id>
+  <author>
+    <name><![CDATA[Samuel Owens]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Weekend Three - The Tap Method]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/14/flatiron-school-weekend-three-the-tap-method/"/>
+    <updated>2013-10-14T10:07:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/14/flatiron-school-weekend-three-the-tap-method</id>
+    <content type="html"><![CDATA[<p><img src="http://hopsandgrapesonline.com/images/uploads/32762.jpg" title="#1 Type of Tap at the Flatiron School." alt="Picture of a Keg Tap" /></p>
+
+<p>Today I wanted to talk about a couple ways I think the .tap method in Ruby is useful. The first time a lot of us at Flatiron saw this method, it was used in an RSpec test and threw many of us for a loop trying to figure out exactly what the test was doing. After using the method for a bit, it&rsquo;s become clearer what the tap method is, a shortcut.</p>
+
+<p>```ruby Equivalent Code&hellip;</p>
+
+<p>class Dog
+attr_accessor :name, :favorite_food, :breed
+end</p>
+
+<h1>The Three code samples below all are based on the above class.</h1>
+
+<p>clifford = Dog.new.tap{|x| x.name = &ldquo;Clifford&rdquo;; x.favorite_food = &ldquo;Children&rdquo;; x.breed = &ldquo;Big Red Dog&rdquo;}</p>
+
+<h1>The code above and below this comment are equivalent.</h1>
+
+<p>clifford = Dog.new</p>
+
+<p>clifford.name = &ldquo;Clifford&rdquo;; clifford.favorite_food = &ldquo;Children&rdquo;; clifford.breed = &ldquo;Big Red Dog&rdquo;; clifford</p>
+
+<h1>This code is also equal to the code below, in case semi-colons make you uncomfortable&hellip;</h1>
+
+<p>clifford = Dog.new
+clifford.name = &ldquo;Clifford&rdquo;
+clifford.favorite_food = &ldquo;Children&rdquo;
+clifford.breed = &ldquo;Big Red Dog.&rdquo;
+clifford</p>
+
+<p>```</p>
+
+<p><img src="http://images1.wikia.nocookie.net/__cb20100302194935/clifford/images/c/c3/Showim.jpg" title="Clifford eating children is a demonstrable fact." alt="Picture of Clifford eating children" /></p>
+
+<p>So the three pieces of code above all return the same value with different ways of getting there. The tap method offers a few advantages over the others.</p>
+
+<p>First, you get the same return out of a single line of code. This advantage should be obvious from looking at the code (you can paste the samples into IRB to confirm equality)</p>
+
+<p>Second, you don&rsquo;t have to store the object in a variable to get its return value. What this means is&hellip;</p>
+
+<p>```ruby The Following Code Samples return the same value.</p>
+
+<h1>Original code from above</h1>
+
+<p>clifford = Dog.new.tap{|x| x.name = &ldquo;Clifford&rdquo;; x.favorite_food = &ldquo;Children&rdquo;; x.breed = &ldquo;Big Red Dog&rdquo;}</p>
+
+<h1>Same return value without having to store the object in a variable</h1>
+
+<p>Dog.new.tap{|x| x.name = &ldquo;Clifford&rdquo;; x.favorite_food = &ldquo;Children&rdquo;; x.breed = &ldquo;Big Red Dog&rdquo;}</p>
+
+<p>```</p>
+
+<p>This allows you if you are creating a large number of objects and passing them into a larger data structure (hash, database, array) to not have to first store the object in a variable before passing the variable into your data structure, saving steps along the way. With the other ways of making clifford &lsquo;real&rsquo;, you would need to store the object in a variable to be able to manipulate it after it was made, with .tap you can make clifford exist and have traits without ever having to tell the computer to remember him.</p>
+]]></content>
+  </entry>
+  
+</feed>

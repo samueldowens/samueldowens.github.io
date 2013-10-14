@@ -4,7 +4,7 @@
   <title><![CDATA[Traversing the Internets]]></title>
   <link href="http://samueldowens.github.io/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-11T09:50:28-04:00</updated>
+  <updated>2013-10-14T10:28:48-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -12,6 +12,89 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Weekend Three - The Tap Method]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/14/flatiron-school-weekend-three-the-tap-method/"/>
+    <updated>2013-10-14T10:07:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/14/flatiron-school-weekend-three-the-tap-method</id>
+    <content type="html"><![CDATA[<p><img src="http://hopsandgrapesonline.com/images/uploads/32762.jpg" title="#1 Type of Tap at the Flatiron School." alt="Picture of a Keg Tap" /></p>
+
+<p>Today I wanted to talk about a couple ways I think the .tap method in Ruby is useful. The first time a lot of us at Flatiron saw this method, it was used in an RSpec test and threw many of us for a loop trying to figure out exactly what the test was doing. After using the method for a bit, it&rsquo;s become clearer what the tap method is, a shortcut.</p>
+
+<figure class='code'><figcaption><span>Equivalent Code&#8230;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Dog</span>
+</span><span class='line'><span class="kp">attr_accessor</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:favorite_food</span><span class="p">,</span> <span class="ss">:breed</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># The Three code samples below all are based on the above class.</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">clifford</span> <span class="o">=</span> <span class="no">Dog</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">tap</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Clifford&quot;</span><span class="p">;</span> <span class="n">x</span><span class="o">.</span><span class="n">favorite_food</span> <span class="o">=</span> <span class="s2">&quot;Children&quot;</span><span class="p">;</span> <span class="n">x</span><span class="o">.</span><span class="n">breed</span> <span class="o">=</span> <span class="s2">&quot;Big Red Dog&quot;</span><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># The code above and below this comment are equivalent.</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">clifford</span> <span class="o">=</span> <span class="no">Dog</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">clifford</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Clifford&quot;</span><span class="p">;</span> <span class="n">clifford</span><span class="o">.</span><span class="n">favorite_food</span> <span class="o">=</span> <span class="s2">&quot;Children&quot;</span><span class="p">;</span> <span class="n">clifford</span><span class="o">.</span><span class="n">breed</span> <span class="o">=</span> <span class="s2">&quot;Big Red Dog&quot;</span><span class="p">;</span> <span class="n">clifford</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># This code is also equal to the code below, in case semi-colons make you uncomfortable...</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">clifford</span> <span class="o">=</span> <span class="no">Dog</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">clifford</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Clifford&quot;</span>
+</span><span class='line'><span class="n">clifford</span><span class="o">.</span><span class="n">favorite_food</span> <span class="o">=</span> <span class="s2">&quot;Children&quot;</span>
+</span><span class='line'><span class="n">clifford</span><span class="o">.</span><span class="n">breed</span> <span class="o">=</span> <span class="s2">&quot;Big Red Dog.&quot;</span>
+</span><span class='line'><span class="n">clifford</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="http://images1.wikia.nocookie.net/__cb20100302194935/clifford/images/c/c3/Showim.jpg" title="Clifford eating children is a demonstrable fact." alt="Picture of Clifford eating children" /></p>
+
+<p>So the three pieces of code above all return the same value with different ways of getting there. The tap method offers a few advantages over the others.</p>
+
+<p>First, you get the same return out of a single line of code. This advantage should be obvious from looking at the code (you can paste the samples into IRB to confirm equality)</p>
+
+<p>Second, you don&rsquo;t have to store the object in a variable to get its return value. What this means is&hellip;</p>
+
+<figure class='code'><figcaption><span>The Following Code Samples return the same value.</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1">#Original code from above</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">clifford</span> <span class="o">=</span> <span class="no">Dog</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">tap</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Clifford&quot;</span><span class="p">;</span> <span class="n">x</span><span class="o">.</span><span class="n">favorite_food</span> <span class="o">=</span> <span class="s2">&quot;Children&quot;</span><span class="p">;</span> <span class="n">x</span><span class="o">.</span><span class="n">breed</span> <span class="o">=</span> <span class="s2">&quot;Big Red Dog&quot;</span><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">#Same return value without having to store the object in a variable</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">Dog</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">tap</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Clifford&quot;</span><span class="p">;</span> <span class="n">x</span><span class="o">.</span><span class="n">favorite_food</span> <span class="o">=</span> <span class="s2">&quot;Children&quot;</span><span class="p">;</span> <span class="n">x</span><span class="o">.</span><span class="n">breed</span> <span class="o">=</span> <span class="s2">&quot;Big Red Dog&quot;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This allows you if you are creating a large number of objects and passing them into a larger data structure (hash, database, array) to not have to first store the object in a variable before passing the variable into your data structure, saving steps along the way. With the other ways of making clifford &lsquo;real&rsquo;, you would need to store the object in a variable to be able to manipulate it after it was made, with .tap you can make clifford exist and have traits without ever having to tell the computer to remember him.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Day Eighteen - Suck It Up, Break Your Code.]]></title>

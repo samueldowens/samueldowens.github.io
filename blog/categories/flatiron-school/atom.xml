@@ -4,7 +4,7 @@
   <title><![CDATA[Category: flatiron school | Traversing the Internets]]></title>
   <link href="http://samueldowens.github.io/blog/categories/flatiron-school/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-11T09:50:28-04:00</updated>
+  <updated>2013-10-14T10:28:48-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -12,6 +12,65 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Weekend Three - The Tap Method]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/14/flatiron-school-weekend-three-the-tap-method/"/>
+    <updated>2013-10-14T10:07:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/14/flatiron-school-weekend-three-the-tap-method</id>
+    <content type="html"><![CDATA[<p><img src="http://hopsandgrapesonline.com/images/uploads/32762.jpg" title="#1 Type of Tap at the Flatiron School." alt="Picture of a Keg Tap" /></p>
+
+<p>Today I wanted to talk about a couple ways I think the .tap method in Ruby is useful. The first time a lot of us at Flatiron saw this method, it was used in an RSpec test and threw many of us for a loop trying to figure out exactly what the test was doing. After using the method for a bit, it&rsquo;s become clearer what the tap method is, a shortcut.</p>
+
+<p>```ruby Equivalent Code&hellip;</p>
+
+<p>class Dog
+attr_accessor :name, :favorite_food, :breed
+end</p>
+
+<h1>The Three code samples below all are based on the above class.</h1>
+
+<p>clifford = Dog.new.tap{|x| x.name = &ldquo;Clifford&rdquo;; x.favorite_food = &ldquo;Children&rdquo;; x.breed = &ldquo;Big Red Dog&rdquo;}</p>
+
+<h1>The code above and below this comment are equivalent.</h1>
+
+<p>clifford = Dog.new</p>
+
+<p>clifford.name = &ldquo;Clifford&rdquo;; clifford.favorite_food = &ldquo;Children&rdquo;; clifford.breed = &ldquo;Big Red Dog&rdquo;; clifford</p>
+
+<h1>This code is also equal to the code below, in case semi-colons make you uncomfortable&hellip;</h1>
+
+<p>clifford = Dog.new
+clifford.name = &ldquo;Clifford&rdquo;
+clifford.favorite_food = &ldquo;Children&rdquo;
+clifford.breed = &ldquo;Big Red Dog.&rdquo;
+clifford</p>
+
+<p>```</p>
+
+<p><img src="http://images1.wikia.nocookie.net/__cb20100302194935/clifford/images/c/c3/Showim.jpg" title="Clifford eating children is a demonstrable fact." alt="Picture of Clifford eating children" /></p>
+
+<p>So the three pieces of code above all return the same value with different ways of getting there. The tap method offers a few advantages over the others.</p>
+
+<p>First, you get the same return out of a single line of code. This advantage should be obvious from looking at the code (you can paste the samples into IRB to confirm equality)</p>
+
+<p>Second, you don&rsquo;t have to store the object in a variable to get its return value. What this means is&hellip;</p>
+
+<p>```ruby The Following Code Samples return the same value.</p>
+
+<h1>Original code from above</h1>
+
+<p>clifford = Dog.new.tap{|x| x.name = &ldquo;Clifford&rdquo;; x.favorite_food = &ldquo;Children&rdquo;; x.breed = &ldquo;Big Red Dog&rdquo;}</p>
+
+<h1>Same return value without having to store the object in a variable</h1>
+
+<p>Dog.new.tap{|x| x.name = &ldquo;Clifford&rdquo;; x.favorite_food = &ldquo;Children&rdquo;; x.breed = &ldquo;Big Red Dog&rdquo;}</p>
+
+<p>```</p>
+
+<p>This allows you if you are creating a large number of objects and passing them into a larger data structure (hash, database, array) to not have to first store the object in a variable before passing the variable into your data structure, saving steps along the way. With the other ways of making clifford &lsquo;real&rsquo;, you would need to store the object in a variable to be able to manipulate it after it was made, with .tap you can make clifford exist and have traits without ever having to tell the computer to remember him.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Day Eighteen - Suck It Up, Break Your Code.]]></title>
@@ -127,23 +186,6 @@ Location = Struct.new(:name, :lattitude, :longitude)</p>
 That&rsquo;s all there is to it, this quickly creates a Struct Class called Location that keeps track of a locations name, lattitude and longitude coordinates. Which brings us to&hellip;</p>
 
 <p><b>Uses:</b> Structs seem like they are best used for set values for things that don&rsquo;t need to have any class methods. Things like GPS locations seem like a great reason to use a struct instead of another structure. Any time where you know there is a fixed amount of information you need a struct can be a quick and easy way of storing information about those things, I&rsquo;m going to try and use structs more and see if I can&rsquo;t find even more useful ways to implement them!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Flatiron School Day Weekend Two]]></title>
-    <link href="http://samueldowens.github.io/blog/2013/10/07/flatiron-school-weekend-two/"/>
-    <updated>2013-10-07T08:38:00-04:00</updated>
-    <id>http://samueldowens.github.io/blog/2013/10/07/flatiron-school-weekend-two</id>
-    <content type="html"><![CDATA[<p>Weekend two was a lot of fun. I managed to end up pretty comfortable with SQL pretty early in the day and we moved onto some other new and interesting things later.</p>
-
-<p>Namely Nokogiri, this ruby gem for scraping web pages was the big learning focus of my weekend. Our project was to use Nokogiri to scrape the Flatiron student webpage for information on each student and export that data into an SQL database. It took a lot of trial and error playing around with Nokogiri before we figured things out, but by the end my whole group was pretty comfortable navigating the trees of data that is HTML.</p>
-
-<p>We also had to redo the quiz from week one but make it object oriented, having to have classes in each of the previous tests. I thought the difficulty on that assignment was pretty easy but that it was useful in providing repetition in looking at grouping things as a class.</p>
-
-<p>Lastly we were given an assignment called playlister, which was a multi-file, multi-class assignment that had a suite of rspec tests that needed to be passed. I sure hope this was the stretch assignment for the weekend as I spent a lot of time struggling with it.</p>
-
-<p>I&rsquo;m really looking forward to week three. After two weeks I&rsquo;m already amazed at the tools we&rsquo;re beginning to scratch the surface of using. I can&rsquo;t imagine after 10 more weeks how many cool things we&rsquo;ll be able to build. I feel like a child who just learned what a car can do but whose feet can&rsquo;t yet reach the pedals. Once they can it&rsquo;s going to be a fun time!</p>
 ]]></content>
   </entry>
   
