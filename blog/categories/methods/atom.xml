@@ -4,7 +4,7 @@
   <title><![CDATA[Category: methods | Traversing the Internets]]></title>
   <link href="http://samueldowens.github.io/blog/categories/methods/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-14T10:28:48-04:00</updated>
+  <updated>2013-10-14T10:35:18-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -18,7 +18,7 @@
     <link href="http://samueldowens.github.io/blog/2013/10/14/flatiron-school-weekend-three-the-tap-method/"/>
     <updated>2013-10-14T10:07:00-04:00</updated>
     <id>http://samueldowens.github.io/blog/2013/10/14/flatiron-school-weekend-three-the-tap-method</id>
-    <content type="html"><![CDATA[<p><img src="http://hopsandgrapesonline.com/images/uploads/32762.jpg" title="#1 Type of Tap at the Flatiron School." alt="Picture of a Keg Tap" /></p>
+    <content type="html"><![CDATA[<p><img class="center <a" src="href="http://hopsandgrapesonline.com/images/uploads/32762.jpg">http://hopsandgrapesonline.com/images/uploads/32762.jpg</a>" title="&lsquo;Picture of a keg tap&rsquo; &lsquo;#1 type of tap at the Flatiron School&rsquo;" ></p>
 
 <p>Today I wanted to talk about a couple ways I think the .tap method in Ruby is useful. The first time a lot of us at Flatiron saw this method, it was used in an RSpec test and threw many of us for a loop trying to figure out exactly what the test was doing. After using the method for a bit, it&rsquo;s become clearer what the tap method is, a shortcut.</p>
 
@@ -46,15 +46,16 @@ clifford.favorite_food = &ldquo;Children&rdquo;
 clifford.breed = &ldquo;Big Red Dog.&rdquo;
 clifford</p>
 
-<p>```</p>
-
-<p><img src="http://images1.wikia.nocookie.net/__cb20100302194935/clifford/images/c/c3/Showim.jpg" title="Clifford eating children is a demonstrable fact." alt="Picture of Clifford eating children" /></p>
+<p>```
+<img class="center <a" src="href="http://images1.wikia.nocookie.net/__cb20100302194935/clifford/images/c/c3/Showim.jpg">http://images1.wikia.nocookie.net/__cb20100302194935/clifford/images/c/c3/Showim.jpg</a>" title="&lsquo;Picture of Clifford about to eat some kids&rsquo; &lsquo;Those kids should be screaming and jumping off that roller coaster.&rsquo;" ></p>
 
 <p>So the three pieces of code above all return the same value with different ways of getting there. The tap method offers a few advantages over the others.</p>
 
 <p>First, you get the same return out of a single line of code. This advantage should be obvious from looking at the code (you can paste the samples into IRB to confirm equality)</p>
 
-<p>Second, you don&rsquo;t have to store the object in a variable to get its return value. What this means is&hellip;</p>
+<p>Second, you don&rsquo;t need to call the variable to get the return value, which also means&hellip;</p>
+
+<p>Third, you don&rsquo;t have to store the object in a variable at all. This looks like&hellip;</p>
 
 <p>```ruby The Following Code Samples return the same value.</p>
 

@@ -104,7 +104,7 @@
   </header>
 
 
-<div class="entry-content"><p><img src="http://hopsandgrapesonline.com/images/uploads/32762.jpg" title="#1 Type of Tap at the Flatiron School." alt="Picture of a Keg Tap" /></p>
+<div class="entry-content"><p><img class="center" src="http://hopsandgrapesonline.com/images/uploads/32762.jpg" title="Picture of a keg tap" alt="#1 type of tap at the Flatiron School"></p>
 
 <p>Today I wanted to talk about a couple ways I think the .tap method in Ruby is useful. The first time a lot of us at Flatiron saw this method, it was used in an RSpec test and threw many of us for a loop trying to figure out exactly what the test was doing. After using the method for a bit, it&rsquo;s become clearer what the tap method is, a shortcut.</p>
 
@@ -153,13 +153,15 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><img src="http://images1.wikia.nocookie.net/__cb20100302194935/clifford/images/c/c3/Showim.jpg" title="Clifford eating children is a demonstrable fact." alt="Picture of Clifford eating children" /></p>
+<p><img class="center" src="http://images1.wikia.nocookie.net/__cb20100302194935/clifford/images/c/c3/Showim.jpg" title="Picture of Clifford about to eat some kids" alt="Those kids should be screaming and jumping off that roller coaster."></p>
 
 <p>So the three pieces of code above all return the same value with different ways of getting there. The tap method offers a few advantages over the others.</p>
 
 <p>First, you get the same return out of a single line of code. This advantage should be obvious from looking at the code (you can paste the samples into IRB to confirm equality)</p>
 
-<p>Second, you don&rsquo;t have to store the object in a variable to get its return value. What this means is&hellip;</p>
+<p>Second, you don&rsquo;t need to call the variable to get the return value, which also means&hellip;</p>
+
+<p>Third, you don&rsquo;t have to store the object in a variable at all. This looks like&hellip;</p>
 
 <figure class='code'><figcaption><span>The Following Code Samples return the same value.</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
