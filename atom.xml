@@ -4,7 +4,7 @@
   <title><![CDATA[Traversing the Internets]]></title>
   <link href="http://samueldowens.github.io/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-15T10:25:23-04:00</updated>
+  <updated>2013-10-15T10:28:14-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -60,6 +60,8 @@
 <p>&ldquo;REPLACE INTO&rdquo; &ndash; The work-horse piece of code, normally we would use &lsquo;INSERT INTO&rsquo; but in this case, I chose to use &lsquo;REPLACE&rsquo; for two reasons. First, it resolves any conflicting titles by replacing the old entry with the newer one, which makes sure that we only have unique entries in the table. Second since it replaces the old version with the new one, it will update any other data about the article that has changed since the last time the scrape was run (for instance, if the number of points were to change).</p>
 
 <p>These three peices that were previously unfamiliar to me do a lot of work in very little space. Because I don&rsquo;t need to write methods to check for some of the things these take care of automatically, we save a lot of space and the code is easy to read. Thanks for reading, I hope if you&rsquo;re working with SQL these little bits are helpful!</p>
+
+<p><a href="https://github.com/samueldowens/hacker_news_scraper" target="_blank">mini-project</a></p>
 ]]></content>
   </entry>
   
