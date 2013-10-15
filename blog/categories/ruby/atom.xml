@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | Traversing the Internets]]></title>
   <link href="http://samueldowens.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-15T10:20:36-04:00</updated>
+  <updated>2013-10-15T10:22:11-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -18,7 +18,7 @@
     <link href="http://samueldowens.github.io/blog/2013/10/15/flatiron-school-day-twenty-two-sql-bits/"/>
     <updated>2013-10-15T08:34:00-04:00</updated>
     <id>http://samueldowens.github.io/blog/2013/10/15/flatiron-school-day-twenty-two-sql-bits</id>
-    <content type="html"><![CDATA[<p>I started working on a (<a href="https://github.com/samueldowens/hacker_news_scraper">https://github.com/samueldowens/hacker_news_scraper</a> &ldquo;mini-project&rdquo;) yesterday to reinforce the different topics we&rsquo;re covering in Flatiron. While it&rsquo;s not done-enough to go over in detail yet I wanted to cover a few bits of SQL that I found particularly useful in getting the program to its current state.</p>
+    <content type="html"><![CDATA[<p>I started working on a <a href="https://github.com/samueldowens/hacker_news_scraper" title="mini-project">mini-project</a> yesterday bto reinforce the different topics we&rsquo;re covering in Flatiron. While it&rsquo;s not done-enough to go over in detail yet I wanted to cover a few bits of SQL that I found particularly useful in getting the program to its current state.</p>
 
 <p>The SQL side of the program exists to keep a unique record of articles off of Hacker News that meet certain criteria. The scrape can be run multiple times over multiple days, weeks, etc. so it was important that the SQL side of the program not continuously re-enter the same article over multiple scrapes. Here&rsquo;s what the code looks like&hellip;</p>
 
