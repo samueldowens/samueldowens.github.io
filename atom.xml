@@ -4,7 +4,7 @@
   <title><![CDATA[Traversing the Internets]]></title>
   <link href="http://samueldowens.github.io/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-14T15:07:06-04:00</updated>
+  <updated>2013-10-15T08:54:07-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day Twenty-Two - SQL Bits]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/15/flatiron-school-day-twenty-two-sql-bits/"/>
+    <updated>2013-10-15T08:34:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/15/flatiron-school-day-twenty-two-sql-bits</id>
+    <content type="html"><![CDATA[<p>I started working on a mini-project yesterday to reinforce the different topics we&rsquo;re covering in Flatiron. While it&rsquo;s not done-enough to go over in detail yet I wanted to cover a few bits of SQL that I found particularly useful in getting the program to its current state.</p>
+
+<p>The SQL side of the program exists to keep a unique record of articles off of Hacker News that meet certain criteria. The scrape can be run multiple times over multiple days, weeks, etc. so it was important that the SQL side of the program not continuously re-enter the same article over multiple scrapes. Here&rsquo;s what the code looks like&hellip;</p>
+
+<figure class='code'><figcaption><span>database.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Database</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="vc">@@db</span> <span class="o">=</span> <span class="ss">SQLite3</span><span class="p">:</span><span class="ss">:Database</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;articles.db&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="vc">@@db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE if NOT EXISTS articles(id INTEGER PRIMARY KEY ASC, title TEXT UNIQUE, url TEXT, parent_url TEXT, points INTEGER);&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">array</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">article</span><span class="o">|</span>
+</span><span class='line'>      <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;REPLACE INTO articles(title, url, parent_url, points) VALUES (?,?,?,?)&quot;</span>
+</span><span class='line'>      <span class="vc">@@db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">article</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="n">article</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">article</span><span class="o">.</span><span class="n">parent_url</span><span class="p">,</span> <span class="n">article</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There are a few bits of this code I would like to highlight.</p>
+
+<p>&ldquo;CREATE TABLE if NOT EXISTS&rdquo; &ndash; This one should be familiar to most Flatiron students already, but since some of our projects and examples have assumed the existance of a table I thought it would be worth mentioning. The &lsquo;if NOT EXISTS&rsquo; part is important to make sure that you are not creating a new table every time the code runs, this code will only execute the first time the program runs, unless the &lsquo;articles&rsquo; table is deleted from the database (this would have to be done manually by the user).</p>
+
+<p>&ldquo;title TEXT UNIQUE&rdquo; &ndash; This is one that I had to look up what I wanted SQL to do before I could figure out how to do it. This tells the database that while the &lsquo;title&rsquo; column is not the primary key, that it is unique and that SQL should raise an error if something attempts to add an item with the same title as something else to the table.</p>
+
+<p>&ldquo;REPLACE INTO&rdquo; &ndash; The work-horse piece of code, normally we would use &lsquo;INSERT INTO&rsquo; but in this case, I chose to use &lsquo;REPLACE&rsquo; for two reasons. First, it resolves any conflicting titles by replacing the old entry with the newer one, which makes sure that we only have unique entries in the table. Second since it replaces the old version with the new one, it will update any other data about the article that has changed since the last time the scrape was run (for instance, if the number of points were to change).</p>
+
+<p>These three peices that were previously unfamiliar to me do a lot of work in very little space. Because I don&rsquo;t need to write methods to check for some of the things these take care of automatically, we save a lot of space and the code is easy to read. Thanks for reading, I hope if you&rsquo;re struggling with SQL these little bits are helpful!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Weekend Three - The Tap Method]]></title>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | Traversing the Internets]]></title>
   <link href="http://samueldowens.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-14T15:07:06-04:00</updated>
+  <updated>2013-10-15T08:54:07-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day Twenty-Two - SQL Bits]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/15/flatiron-school-day-twenty-two-sql-bits/"/>
+    <updated>2013-10-15T08:34:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/15/flatiron-school-day-twenty-two-sql-bits</id>
+    <content type="html"><![CDATA[<p>I started working on a mini-project yesterday to reinforce the different topics we&rsquo;re covering in Flatiron. While it&rsquo;s not done-enough to go over in detail yet I wanted to cover a few bits of SQL that I found particularly useful in getting the program to its current state.</p>
+
+<p>The SQL side of the program exists to keep a unique record of articles off of Hacker News that meet certain criteria. The scrape can be run multiple times over multiple days, weeks, etc. so it was important that the SQL side of the program not continuously re-enter the same article over multiple scrapes. Here&rsquo;s what the code looks like&hellip;</p>
+
+<p>```ruby database.rb
+class Database</p>
+
+<p>  @@db = SQLite3::Database.new(&lsquo;articles.db&rsquo;)
+  @@db.execute(&ldquo;CREATE TABLE if NOT EXISTS articles(id INTEGER PRIMARY KEY ASC, title TEXT UNIQUE, url TEXT, parent_url TEXT, points INTEGER);&rdquo;)</p>
+
+<p>  def self.insert(array)</p>
+
+<pre><code>array.each do |article|
+  sql = "REPLACE INTO articles(title, url, parent_url, points) VALUES (?,?,?,?)"
+  @@db.execute(sql, article.title, article.url, article.parent_url, article.points)
+end
+</code></pre>
+
+<p>  end</p>
+
+<p>end
+```</p>
+
+<p>There are a few bits of this code I would like to highlight.</p>
+
+<p>&ldquo;CREATE TABLE if NOT EXISTS&rdquo; &ndash; This one should be familiar to most Flatiron students already, but since some of our projects and examples have assumed the existance of a table I thought it would be worth mentioning. The &lsquo;if NOT EXISTS&rsquo; part is important to make sure that you are not creating a new table every time the code runs, this code will only execute the first time the program runs, unless the &lsquo;articles&rsquo; table is deleted from the database (this would have to be done manually by the user).</p>
+
+<p>&ldquo;title TEXT UNIQUE&rdquo; &ndash; This is one that I had to look up what I wanted SQL to do before I could figure out how to do it. This tells the database that while the &lsquo;title&rsquo; column is not the primary key, that it is unique and that SQL should raise an error if something attempts to add an item with the same title as something else to the table.</p>
+
+<p>&ldquo;REPLACE INTO&rdquo; &ndash; The work-horse piece of code, normally we would use &lsquo;INSERT INTO&rsquo; but in this case, I chose to use &lsquo;REPLACE&rsquo; for two reasons. First, it resolves any conflicting titles by replacing the old entry with the newer one, which makes sure that we only have unique entries in the table. Second since it replaces the old version with the new one, it will update any other data about the article that has changed since the last time the scrape was run (for instance, if the number of points were to change).</p>
+
+<p>These three peices that were previously unfamiliar to me do a lot of work in very little space. Because I don&rsquo;t need to write methods to check for some of the things these take care of automatically, we save a lot of space and the code is easy to read. Thanks for reading, I hope if you&rsquo;re struggling with SQL these little bits are helpful!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Weekend Three - The Tap Method]]></title>
@@ -164,29 +204,6 @@ other_fido.number_of_legs = 3
 <p>It turns out after looking at my &lsquo;to do&rsquo; list for Flatiron that the only things I have unfinished stand about 80% done. Some are a little further along, some less; but the overwhelming majority of my unfinished work falls right around &lsquo;almost done.&rsquo; It always seems to be that one method I can&rsquo;t get to function correctly, or the one or two tests I just can&rsquo;t seem to get to pass that are holding up some of my work from being completed.</p>
 
 <p>So I&rsquo;ve decided I&rsquo;m going to stop caring about pace. I&rsquo;m not going to find it odd or frustrating anymore when I rush through 80% of a project only to find myself stuck in the mud at the end. I&rsquo;m just going to push through it, knowing that it&rsquo;s completely normal and not something that&rsquo;s going to change.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Flatiron School Day Fifteen - Structs]]></title>
-    <link href="http://samueldowens.github.io/blog/2013/10/08/flatiron-school-day-fifteen-structs/"/>
-    <updated>2013-10-08T08:31:00-04:00</updated>
-    <id>http://samueldowens.github.io/blog/2013/10/08/flatiron-school-day-fifteen-structs</id>
-    <content type="html"><![CDATA[<p>Today I&rsquo;m going to take a break from &lsquo;talking about my day&rsquo; and instead try and explain something technical. Today I&rsquo;m going to talk about structs, a concept in Ruby we haven&rsquo;t actually learned at Flatiron yet. This article is inspired by the presentation on <a href="https://speakerdeck.com/metaskills/ruby-struct/" title="Speaker Deck by Ken Collins">Speaker Deck by Ken Collins</a>, so thanks Ken for getting me thinking about structs!</p>
-
-<p>I&rsquo;m going to try and break down structs into three parts. Concept, Code and Uses&hellip;</p>
-
-<p><b>Concept:</b> A struct is a miniture class, created quickly and at its core it is a class that only has basic getter and setter methods.</p>
-
-<p><b>Code:</b> There are a few ways to create a struct. I think the easiest to do and understand is as follows&hellip;</p>
-
-<p>```ruby Struct Creation
-Location = Struct.new(:name, :lattitude, :longitude)</p>
-
-<p>```
-That&rsquo;s all there is to it, this quickly creates a Struct Class called Location that keeps track of a locations name, lattitude and longitude coordinates. Which brings us to&hellip;</p>
-
-<p><b>Uses:</b> Structs seem like they are best used for set values for things that don&rsquo;t need to have any class methods. Things like GPS locations seem like a great reason to use a struct instead of another structure. Any time where you know there is a fixed amount of information you need a struct can be a quick and easy way of storing information about those things, I&rsquo;m going to try and use structs more and see if I can&rsquo;t find even more useful ways to implement them!</p>
 ]]></content>
   </entry>
   
