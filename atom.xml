@@ -4,7 +4,7 @@
   <title><![CDATA[Traversing the Internets]]></title>
   <link href="http://samueldowens.github.io/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-15T10:30:07-04:00</updated>
+  <updated>2013-10-16T08:59:29-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day Twenty Three - RSpec Musings]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/16/flatiron-school-day-twenty-three-rspec-bullet-points/"/>
+    <updated>2013-10-16T08:36:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/16/flatiron-school-day-twenty-three-rspec-bullet-points</id>
+    <content type="html"><![CDATA[<p>Todays post is going to be short. I&rsquo;m going to write down some thoughts about RSpec and writing tests.</p>
+
+<p>Write out what you want your tests to do without worrying about the actual syntax for the tests first.
+Statements like &ldquo;it &lsquo;should do whatever this test should do&rsquo;&rdquo; do can be followed with pending on the next line.
+This allows you to write out all of the ideas with what you would like your code to do without having to worry about any syntax yet.
+You can then impliment tests as you&rsquo;re comfortable and write the corresponding code to pass them when the tests are ready.</p>
+
+<p>Sometimes it&rsquo;s helpful to write out skeleton tests, to describe what features a given unit of work should DEFINITELY have without
+worrying too much about potential features or tasks that it may need further down the line. Once you get the basics built out on
+your files when you come across new functionality that is needed you can go back and add tests and then add the code to get those to pass.
+This approach can save some time as you won&rsquo;t need to try and brainstorm every feature you might come across and can instead focus on making
+sure your tests are good and that your code passes them. <strong>You can always add more tests later</strong></p>
+
+<p>With the level of complexity of our current projects, writing tests often feels very frustrating. It feels like spending a lot of time writing out
+very basic things about the code when we could be actually writing the program. Intellectually I&rsquo;m aware that this work will pay off down the line as projects become
+more complex, so in the meantime I need to keep reminding myself that it&rsquo;s not slowing us down, it&rsquo;s preparing us for things to come.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Day Twenty-Two - SQL Bits]]></title>
