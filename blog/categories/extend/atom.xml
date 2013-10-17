@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: extend | Traversing the Internets]]></title>
+  <link href="http://samueldowens.github.io/blog/categories/extend/atom.xml" rel="self"/>
+  <link href="http://samueldowens.github.io/"/>
+  <updated>2013-10-17T09:01:59-04:00</updated>
+  <id>http://samueldowens.github.io/</id>
+  <author>
+    <name><![CDATA[Samuel Owens]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day Twenty Four - Include or Extend for a Module?]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/17/flatiron-school-day-twenty-four-include-or-extend-for-a-module/"/>
+    <updated>2013-10-17T08:49:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/17/flatiron-school-day-twenty-four-include-or-extend-for-a-module</id>
+    <content type="html"><![CDATA[<p>Yesterday I found myself writing my first module. For those who don&rsquo;t know, in ruby a module is a package of methods that you write and store in a seperate place, which you can call on inside a class to include the methods contained within. These are used when you want to have the exact same methods included in multiple places, using a module is cleaner and DRY'er than repeating the method definitions in every class.</p>
+
+<p>There are two ways to add a module to a class, <strong>include</strong> and <strong>extend</strong>. The <strong>include</strong> keyword will bring the module methods into the class as instance methods, allowing instances of the class to use the methods. The <strong>extend</strong> keyword will bring the module methods into the class as class methods, allowing the class itself to call those methods.</p>
+
+<p>It&rsquo;s important to understand which of these two are appropriate to use on the module and to design and structure your module so that it can be used correctly. If you use the wrong keyword to bring the module into a class you will not end up with the expected functionality. Additionally, modules should be designed and structured with this in mind, separating methods that are intended to be instance methods from those that are intended to be class methods.</p>
+]]></content>
+  </entry>
+  
+</feed>

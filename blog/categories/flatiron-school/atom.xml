@@ -4,7 +4,7 @@
   <title><![CDATA[Category: flatiron school | Traversing the Internets]]></title>
   <link href="http://samueldowens.github.io/blog/categories/flatiron-school/atom.xml" rel="self"/>
   <link href="http://samueldowens.github.io/"/>
-  <updated>2013-10-17T09:00:14-04:00</updated>
+  <updated>2013-10-17T09:01:59-04:00</updated>
   <id>http://samueldowens.github.io/</id>
   <author>
     <name><![CDATA[Samuel Owens]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Flatiron School Day Twenty Four - Include or Extend for a Module?]]></title>
+    <link href="http://samueldowens.github.io/blog/2013/10/17/flatiron-school-day-twenty-four-include-or-extend-for-a-module/"/>
+    <updated>2013-10-17T08:49:00-04:00</updated>
+    <id>http://samueldowens.github.io/blog/2013/10/17/flatiron-school-day-twenty-four-include-or-extend-for-a-module</id>
+    <content type="html"><![CDATA[<p>Yesterday I found myself writing my first module. For those who don&rsquo;t know, in ruby a module is a package of methods that you write and store in a seperate place, which you can call on inside a class to include the methods contained within. These are used when you want to have the exact same methods included in multiple places, using a module is cleaner and DRY'er than repeating the method definitions in every class.</p>
+
+<p>There are two ways to add a module to a class, <strong>include</strong> and <strong>extend</strong>. The <strong>include</strong> keyword will bring the module methods into the class as instance methods, allowing instances of the class to use the methods. The <strong>extend</strong> keyword will bring the module methods into the class as class methods, allowing the class itself to call those methods.</p>
+
+<p>It&rsquo;s important to understand which of these two are appropriate to use on the module and to design and structure your module so that it can be used correctly. If you use the wrong keyword to bring the module into a class you will not end up with the expected functionality. Additionally, modules should be designed and structured with this in mind, separating methods that are intended to be instance methods from those that are intended to be class methods.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flatiron School Day Twenty Three - RSpec Musings]]></title>
@@ -149,72 +162,6 @@ clifford</p>
 <p>In Office Space they took the printer out into a field after one too many &ldquo;pc load letter&rdquo; errors and smashed it to pieces. Unfortunately with hardware, its pretty difficult to put back together. Count yourself lucky that with code that is not the case, you can destroy your project over and over again and roll it back if you aren&rsquo;t making useful progress.</p>
 
 <p>Get over the fear of the red results and break your code, it&rsquo;s liberating.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Flatiron School Day Seventeen - Class Methods]]></title>
-    <link href="http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-seventeen-class-methods/"/>
-    <updated>2013-10-10T08:33:00-04:00</updated>
-    <id>http://samueldowens.github.io/blog/2013/10/10/flatiron-school-day-seventeen-class-methods</id>
-    <content type="html"><![CDATA[<p>I wanted to write down a little bit about my understanding of how methods work inside of classes and how to know if you want your method to be &lsquo;self.method&rsquo; or just &lsquo;method.&rsquo;</p>
-
-<p>Take the following situation&hellip;</p>
-
-<p>```ruby The Dog Class
-class Dog</p>
-
-<p>  attr_accessor :name, :color, :breed, :number_of_legs</p>
-
-<p>end</p>
-
-<p>fido = Dog.new
-fido.name = &ldquo;Fido&rdquo;
-fido.color = &ldquo;Red&rdquo;
-fido.breed = &ldquo;Direwolf&rdquo;
-fido.number_of_legs = 4</p>
-
-<p>other_fido = Dog.new
-other_fido.name = &ldquo;Not Fido&rdquo;
-other_fido.color = &ldquo;Green&rdquo;
-other_fido.breed = &ldquo;Regular Wolf&rdquo;
-other_fido.number_of_legs = 3
-```</p>
-
-<p>So we have the class Dog with a few attributes, and we&rsquo;ve created two dogs. Now we&rsquo;re going to create two methods, one to make an individual dog bark and one to make the Dog class bark.</p>
-
-<p>```ruby I Should Have Named One of the Dogs Charles BARKley.</p>
-
-<p>class Dog</p>
-
-<p>  def barkley</p>
-
-<pre><code>puts "I AM TOTALLY BARKING YOU GUYS"
-</code></pre>
-
-<p>  end</p>
-
-<p>  def self.bark</p>
-
-<pre><code>puts "THE CONCEPT OF A DOG IS BARKING, RUN FOR YOUR LIVES!"
-</code></pre>
-
-<p>  end</p>
-
-<p>end
-```</p>
-
-<p>Now, if we put fido.barkley we will see
-&ldquo;I AM TOTALLY BARKING YOU GUYS&rdquo;</p>
-
-<p>If you put fido.bark though, you will get a NoMethodError, because the bark method is defined for the class it was in because we defined it as self.bark, with self referring to the current object its contained within.</p>
-
-<p>So&hellip; If we put Dog.bark we will see
-&ldquo;THE CONCEPT OF A DOG IS BARKING, RUN FOR YOUR LIVES!&rdquo;</p>
-
-<p>Similarly, if we were to call Dog.barkley we would again get a NoMethodError because the method is defined without the self demarcation, telling ruby that it is to be used by individual dogs, not by the class as a whole.</p>
-
-<p>So bringing things back around, if you want your overall class to respond to a method, name it as self.method, if you want a specific instance of that class to respond to it, do not have the self in there.</p>
 ]]></content>
   </entry>
   
