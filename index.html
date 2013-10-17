@@ -9,7 +9,10 @@
   <meta name="author" content="Samuel Owens">
 
   
-  <meta name="description" content="Todays post is going to be short. I&rsquo;m going to write down some thoughts about RSpec and writing tests. Write out what you want your tests to do &hellip;">
+  <meta name="description" content="layout: post
+title: &ldquo;Flatiron School Day Twenty Four &ndash; Include or Extend for a Module?&rdquo;
+date: 2013-10-17 08:49
+comments: true &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +79,59 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/10/17/flatiron-school-day-twenty-four-include-or-extend-for-a-module/">Flatiron School Day Twenty Four Include or Extend for a Module</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-17T00:00:00-04:00" pubdate data-updated="true">Oct 17<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/10/17/flatiron-school-day-twenty-four-include-or-extend-for-a-module/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><hr />
+
+<p>layout: post
+title: &ldquo;Flatiron School Day Twenty Four &ndash; Include or Extend for a Module?&rdquo;
+date: 2013-10-17 08:49
+comments: true
+sharing: true
+footer: true</p>
+
+<h2>categories: [ruby, flatiron school, moudle, include, extend]</h2>
+
+<p>Yesterday I found myself writing my first module. For those who don&rsquo;t know, in ruby a module is a package of methods that you write and store in a seperate place, which you can call on inside a class to include the methods contained within. These are used when you want to have the exact same methods included in multiple places, using a module is cleaner and DRY&#8217;er than repeating the method definitions in every class.</p>
+
+<p>There are two ways to add a module to a class, <strong>include</strong> and <strong>extend</strong>. The <strong>include</strong> keyword will bring the module methods into the class as instance methods, allowing instances of the class to use the methods. The <strong>extend</strong> keyword will bring the module methods into the class as class methods, allowing the class itself to call those methods.</p>
+
+<p>It&rsquo;s important to understand which of these two are appropriate to use on the module and to design and structure your module so that it can be used correctly. If you use the wrong keyword to bring the module into a class you will not end up with the expected functionality. Additionally, modules should be designed and structured with this in mind, separating methods that are intended to be instance methods from those that are intended to be class methods.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -691,64 +747,6 @@ more complex, so in the meantime I need to keep reminding myself that it&rsquo;s
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/10/03/flatiron-school-day-ten/">Flatiron School Day Ten</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-10-03T08:23:00-04:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2013</time>
-        
-         | <a href="/blog/2013/10/03/flatiron-school-day-ten/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Phew, day nine is over and in the rear view mirror and day ten kicked off
-with a few hours of self-directed work. It really seemed to come at just
-the right time for a lot of us, myself included. I got caught up on a lot
-of the things that were giving me trouble and by the end of the day was
-really feeling like I was back in the driver&rsquo;s seat with my learning.</p>
-
-<p>I&rsquo;m finally starting to instinctively break things down into smaller chunks.
-I was expecting this sort of progress to come with a light bulb over my head,
-fireworks or some other sort of stark realization that I had made progress.
-Instead it came from solving a problem and looking at my solution and realizing
-that I solved it differently than I would have a couple days ago without even
-noticing I was doing it.</p>
-
-<p>I&rsquo;m also starting to get a little bit of a handle on refactoring. I managed
-to get our pigeon hash problem working and then condensed some of my code
-that was running in different parts of the program into a single method at
-the end to execute all the sub-methods at once. I&rsquo;m happy that I spotted this
-and was able to make my code better without breaking its functionality. After
-looking at some of the solutions my classmates came up with however, I still
-know that I have a lot of work to do with refactoring as some of their
-solutions were brilliant!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -764,6 +762,10 @@ solutions were brilliant!</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/10/17/flatiron-school-day-twenty-four-include-or-extend-for-a-module/">Flatiron School Day Twenty Four Include Or Extend For A Module</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/10/16/flatiron-school-day-twenty-three-rspec-bullet-points/">Flatiron School Day Twenty Three - RSpec Musings</a>
       </li>
     
@@ -777,10 +779,6 @@ solutions were brilliant!</p>
     
       <li class="post">
         <a href="/blog/2013/10/11/flatiron-school-day-eightteen-refactor_fu/">Flatiron School Day Eighteen - Suck It Up, Break Your Code.</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/10/10/flatiron-school-day-seventeen-class-methods/">Flatiron School Day Seventeen - Class Methods</a>
       </li>
     
   </ul>
